@@ -18,6 +18,12 @@ smoke_out*/
 logs/
 .smoke*_jobid
 .deps_pin/
+.openresearch/artifacts/
+artifacts/
+data/
+models/
+hf_cache/
+EVAL.md
 
 # Audio (except toy examples)
 *.wav
@@ -29,5 +35,9 @@ logs/
 *.pth
 pretrained_models/
 checkpoints/
+
+# Local research credentials and state
+.env.*
+!.env.example
 
 # SLURM logs are in logs/ (gitignored above)

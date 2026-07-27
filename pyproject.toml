@@ -11,19 +11,20 @@ authors = [
 
 # Core deps only (backbone-specific deps are in env/*.txt).
 dependencies = [
-    "torch>=2.4",
-    "torchaudio",
-    "numpy>=1.26",
-    "pandas",
-    "scikit-learn",
-    "tqdm",
+    "torch==2.6.0",
+    "torchaudio==2.6.0",
+    "numpy>=1.26,<2.3",
+    "pandas==2.3.3",
+    "pyyaml>=6.0.2",
+    "scikit-learn==1.7.2",
+    "tqdm==4.67.3",
 ]
 
 [project.urls]
 Homepage = "https://github.com/wsssy/CoCoEmo"
 
 [tool.setuptools.packages.find]
-include = ["cocoemo*"]
+include = ["cocoemo*", "repro*"]
 
 [build-system]
 requires = ["setuptools>=64"]

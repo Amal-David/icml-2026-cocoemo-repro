@@ -1,0 +1,9 @@
+# Agent traces and Workspace state may contain sensitive data.
+/trace_sources.json
+/traces/
+/workspace_baselines/
+/workspace_bucket_state.json
+/trace_dataset/
+/imported_workspace.json
+/logbook/traces/
+/logbook/workspace.json

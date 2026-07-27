@@ -1,0 +1,13 @@
+{
+  "space_id": "amal-david/repro-cocoemo-composable-and-controllable-human-like-emotional-tts-via-activation-steering",
+  "emoji": "🎯",
+  "created_at": "2026-07-27T19:22:24+00:00",
+  "last_page": "claim-5-high-severity-text-emotion-mismatch",
+  "tags": [
+    "icml2026-repro",
+    "paper-wW2LIHSCfw"
+  ],
+  "paper": {
+    "arxiv_id": "2602.03420"
+  }
+}
