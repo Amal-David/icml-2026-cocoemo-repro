@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import platform
+import hashlib
 import subprocess
 import sys
 from pathlib import Path
@@ -24,6 +25,27 @@ def git_commit(repo: Path) -> str:
     return result.stdout.strip()
 
 
+def git_state(repo: Path) -> dict[str, Any]:
+    status = subprocess.run(
+        ["git", "status", "--porcelain=v1"],
+        cwd=repo,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout
+    diff = subprocess.run(
+        ["git", "diff", "--binary", "HEAD"],
+        cwd=repo,
+        check=True,
+        capture_output=True,
+    ).stdout
+    return {
+        "dirty": bool(status.strip()),
+        "status": status.splitlines(),
+        "tracked_diff_sha256": hashlib.sha256(diff).hexdigest(),
+    }
+
+
 def collect_provenance(*, repo: Path, config_path: Path, config_digest: str) -> dict[str, Any]:
     try:
         import torch
@@ -41,6 +63,7 @@ def collect_provenance(*, repo: Path, config_path: Path, config_digest: str) -> 
         "repository": {
             "url": "https://github.com/Amal-David/icml-2026-cocoemo-repro",
             "commit": git_commit(repo),
+            **git_state(repo),
         },
         "upstream": {"url": UPSTREAM_URL, "commit": UPSTREAM_COMMIT},
         "config": {

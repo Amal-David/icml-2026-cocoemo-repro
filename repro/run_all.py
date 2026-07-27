@@ -15,6 +15,7 @@ if str(REPO) not in sys.path:
 from repro.config import ReproConfig, load_config
 from repro.contracts import ArtifactLedger, ContractError
 from repro.provenance import collect_provenance
+from repro.release_audit import audit_release
 
 
 def write_json(path: Path, payload: Any) -> None:
@@ -31,11 +32,13 @@ def preflight(config: ReproConfig) -> dict[str, Any]:
     missing = [path.relative_to(REPO).as_posix() for path in required if not path.is_file()]
     if missing:
         raise ContractError(f"release preflight is missing files: {', '.join(missing)}")
+    release_audit = audit_release(REPO)
     return {
         "stage": "preflight",
         "claim_evidence": False,
         "verdict": "not_evaluated",
         "checks": {"required_release_files": "pass", "missing": []},
+        "release_audit": release_audit,
         "limitations": [
             "No synthesis or empirical claim was evaluated by this preflight.",
             "Exact ESD and IEMOCAP reproductions require separately licensed data.",
