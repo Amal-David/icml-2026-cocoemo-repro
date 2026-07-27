@@ -10,3 +10,14 @@
 **Preregistered test.** Reproduce each named CREMA-D condition separately, then compare genuine mixed vectors with instruction-only, dominant-only, label-shuffled, and norm-matched-random controls using paper-faithful and frozen independent evaluators. Report paired bootstrap intervals and full denominators. Naturalness requires a real blinded listening study; no automatic score or agent judgment will substitute for N-MOS.
 
 **Scope.** The public [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D) subset is feasible. Exact out-of-distribution confirmation on [IEMOCAP](https://sail.usc.edu/iemocap/) remains blocked without licensed access.
+
+
+---
+<!-- trackio-cell
+{"type": "markdown", "id": "cell_dcaafaa6f936", "created_at": "2026-07-27T19:58:39+00:00", "title": "CREMA-D selection-count falsification"}
+-->
+At [clean reproduction commit 19720d4](https://github.com/Amal-David/icml-2026-cocoemo-repro/tree/19720d49a4cb1ff682e33f9fb320034ac9e52384), the fixed runner downloaded the official [CREMA-D vote table at 1658cd3](https://github.com/CheyneyComputerScience/CREMA-D/tree/1658cd342dff90010aa843eaeebd53610a08b1dc), verified SHA-256 774d9d759cb5caf2542758a39eca8c0f1d2777f9987ff5d5adf8066d192f377b, and independently recomputed the published selection rule.
+
+Results: 7,442 audio-only rows; 791 rows under the closest paper-consistent supported-disagreement filter; 14 rows under the literal more-than-two unique non-neutral categories reading; and 323 rows under the at-least-three non-neutral votes reading. None yields the paper-reported 772. No records were discarded to force agreement.
+
+The complete local-audit artifact set, including the transparent 791-row proxy, selection variants, provenance, hashes, and COMPLETE marker, is published at [amal-david/cocoemo-repro-artifacts](https://huggingface.co/datasets/amal-david/cocoemo-repro-artifacts/tree/main/local/claim4-metadata/19720d49a4cb). This is released-data protocol evidence, not a substitute for the required Hugging Face GPU mixed-emotion experiment.
