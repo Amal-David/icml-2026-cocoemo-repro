@@ -6,6 +6,16 @@ from repro.config import ConfigError, load_config
 from repro.contracts import ContractError, require_complete_counts, require_metrics
 
 
+REPO = Path(__file__).resolve().parents[2]
+
+
+def test_committed_gpu_baseline_config_is_valid() -> None:
+    config = load_config(REPO / "configs" / "baseline-cosyvoice2.yaml")
+
+    assert config.stage == "baseline"
+    assert config.raw["baseline"]["alphas"] == [0, 3, 5]
+
+
 def test_config_digest_is_stable(tmp_path: Path) -> None:
     first = tmp_path / "first.yaml"
     second = tmp_path / "second.yaml"

@@ -55,7 +55,7 @@ def load_config(path: str | Path) -> ReproConfig:
         raise ConfigError("config.run.name must not be empty")
     if not isinstance(run["seed"], int):
         raise ConfigError("config.run.seed must be an integer")
-    if run["stage"] not in {"preflight", "claim1", "claim2", "claim3", "claim4", "claim5"}:
+    if run["stage"] not in {"preflight", "baseline", "claim1", "claim2", "claim3", "claim4", "claim5"}:
         raise ConfigError(f"unsupported stage: {run['stage']}")
 
     claims = raw.get("claims", [])

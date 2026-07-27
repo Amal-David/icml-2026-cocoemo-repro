@@ -1,0 +1,23 @@
+run:
+  name: released-cosyvoice2-runtime-baseline
+  seed: 20260728
+  stage: baseline
+
+claims: []
+
+baseline:
+  source_url: https://github.com/FunAudioLLM/CosyVoice.git
+  source_revision: 074ca6dc9e80a2f424f1f74b48bdd7d3fea531cc
+  model_id: FunAudioLLM/CosyVoice2-0.5B
+  model_revision: eec1ae6c79877dbd9379285cf8789c9e0879293d
+  steering_vector: steering_vectors/cosyvoice2/angry_neutral_attn_output.pt
+  reference_audio: examples/toy_audio/neutral.wav
+  text: I cannot believe you did that.
+  prompt_text: ""
+  alphas: [0, 3, 5]
+  layers: [17, 14]
+  operation: attn_output
+
+evidence:
+  claim_evidence: false
+  purpose: Prove the released CosyVoice2 steering path runs end to end before claim experiments.

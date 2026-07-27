@@ -47,9 +47,13 @@ def preflight(config: ReproConfig) -> dict[str, Any]:
     }
 
 
-def run_stage(config: ReproConfig) -> dict[str, Any]:
+def run_stage(config: ReproConfig, *, run_root: Path) -> dict[str, Any]:
     if config.stage == "preflight":
         return preflight(config)
+    if config.stage == "baseline":
+        from repro.gpu_baseline import run_gpu_baseline
+
+        return run_gpu_baseline(config, repo=REPO, run_root=run_root)
     raise ContractError(
         f"stage {config.stage!r} has no implemented evidence runner; refusing to emit a claim result"
     )
@@ -84,7 +88,7 @@ def main() -> None:
         raise ContractError(f"completed run is immutable: {run_root}")
     run_root.mkdir(parents=True, exist_ok=True)
 
-    summary = run_stage(config)
+    summary = run_stage(config, run_root=run_root)
     write_json(run_root / "resolved_config.json", config.raw)
     write_json(run_root / "provenance.json", provenance)
     write_json(run_root / "summary.json", summary)
@@ -93,13 +97,15 @@ def main() -> None:
     (REPO / "EVAL.md").write_text(eval_text, encoding="utf-8")
 
     ledger = ArtifactLedger(run_root)
-    for filename, kind in (
-        ("resolved_config.json", "config"),
-        ("provenance.json", "provenance"),
-        ("summary.json", "metrics"),
-        ("EVAL.md", "report"),
-    ):
-        ledger.add(run_root / filename, kind=kind)
+    kinds = {
+        ".json": "data",
+        ".jsonl": "per_sample",
+        ".md": "report",
+        ".wav": "audio",
+    }
+    for path in sorted(run_root.rglob("*")):
+        if path.is_file() and path.name not in {"artifact_manifest.json", "COMPLETE.json"}:
+            ledger.add(path, kind=kinds.get(path.suffix, "artifact"))
     manifest_path = ledger.write()
     write_json(
         completed,

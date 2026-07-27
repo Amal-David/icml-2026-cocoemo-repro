@@ -23,6 +23,7 @@ artifacts/
 data/
 models/
 hf_cache/
+.cache/
 EVAL.md
 
 # Audio (except toy examples)
