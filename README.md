@@ -2,6 +2,25 @@
 
 [Demo](https://wsssy.github.io/cocoemo_demo/) | [Paper](https://arxiv.org/abs/2602.03420)
 
+> **Independent reproduction fork.** This repository pins the authors' public
+> release at `dcc319148dd2e0e0f3039e06e81e0f770d108f08` and adds a strict ICML
+> 2026 Agent Reproducibility Challenge harness. The reproduction work and
+> findings are not maintained or endorsed by the original authors.
+
+## Reproduction workspace
+
+- Claim definitions and preregistered tests: [`docs/claim_matrix.md`](docs/claim_matrix.md)
+- Fixed runner: `uv run python repro/run_all.py --config configs/active.yaml`
+- Pinned CosyVoice2 GPU baseline: [`configs/baseline-cosyvoice2.yaml`](configs/baseline-cosyvoice2.yaml)
+- Blinded human-study preregistration: [`study/PREREGISTRATION.md`](study/PREREGISTRATION.md)
+- Durable artifacts: [Hugging Face dataset](https://huggingface.co/datasets/amal-david/cocoemo-repro-artifacts)
+- Local logbook preview: `trackio logbook serve .`
+
+The harness refuses partial sample counts, missing required metrics, dirty-tree
+claim provenance, incompatible steering vectors, and silent evaluator failures.
+Exact ESD and IEMOCAP replications remain explicitly blocked without licensed
+access; public-data experiments are labeled as directional or proxy evidence.
+
 
 
 ## Overview
@@ -152,4 +171,3 @@ See [`docs/DATA_FORMAT.md`](docs/DATA_FORMAT.md) for manifest formats.
 |----------|--------|----------|-----------|
 | CosyVoice2 | 17, 14 | `attn_output` | 896 | 
 | IndexTTS2 | 6, 8, 1 | `attn_output` | 1024 | 
-
