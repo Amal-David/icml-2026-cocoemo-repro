@@ -54,6 +54,10 @@ def run_stage(config: ReproConfig, *, run_root: Path) -> dict[str, Any]:
         from repro.gpu_baseline import run_gpu_baseline
 
         return run_gpu_baseline(config, repo=REPO, run_root=run_root)
+    if config.stage == "claim4" and "claim4_metadata" in config.raw:
+        from repro.claim4_metadata import run_claim4_metadata
+
+        return run_claim4_metadata(config, repo=REPO, run_root=run_root)
     raise ContractError(
         f"stage {config.stage!r} has no implemented evidence runner; refusing to emit a claim result"
     )

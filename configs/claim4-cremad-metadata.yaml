@@ -1,0 +1,21 @@
+run:
+  name: claim4-cremad-selection-audit
+  seed: 20260728
+  stage: claim4
+
+claims: [4]
+
+claim4_metadata:
+  source_revision: 1658cd342dff90010aa843eaeebd53610a08b1dc
+  votes_url: https://raw.githubusercontent.com/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/processedResults/tabulatedVotes.csv
+  votes_sha256: 774d9d759cb5caf2542758a39eca8c0f1d2777f9987ff5d5adf8066d192f377b
+  paper_reported_count: 772
+  expected_counts:
+    audio_only: 7442
+    closest_supported_disagreement: 791
+    literal_gt2_unique_non_neutral: 14
+    at_least_3_non_neutral_votes: 323
+
+evidence:
+  claim_evidence: false
+  purpose: Audit whether the released CREMA-D metadata reproduces the paper selection count.
