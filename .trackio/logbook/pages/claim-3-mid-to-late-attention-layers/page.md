@@ -23,3 +23,12 @@ The clean-tree preflight at [commit e9eff32](https://github.com/Amal-David/icml-
 3. The paper specifies norm-preserving steering, but prepare_steering_injection_config actively selects translation_op_; the norm-preserving operator is commented out.
 
 These findings block accepting IndexTTS2 results before a GPU canary and make raw translation a named implementation-deviation control for CosyVoice2. They are source/artifact conformance evidence, not a substitute for the speaker-disjoint GPU layer scan.
+
+
+---
+<!-- trackio-cell
+{"type": "markdown", "id": "cell_claim23_site_proxy", "created_at": "2026-07-28T05:35:00+00:00", "title": "Frozen speaker-disjoint site scan"}
+-->
+At [reproduction commit 34cac6d](https://github.com/Amal-David/icml-2026-cocoemo-repro/tree/34cac6d), the same [public-RAVDESS full configuration](https://github.com/Amal-David/icml-2026-cocoemo-repro/blob/34cac6d/configs/claim23-ravdess-paired-sites.yaml) freezes a five-class, speaker-disjoint scan of ten paper-defined CosyVoice2 hook types across all 24 layers. Train, validation, and test contain 12, five, and seven disjoint actors respectively. A nearest-centroid linear rule is fit on train only; the top two sites are selected on validation only; and a 200-permutation maximum-over-240-sites null controls selection multiplicity.
+
+The held-out report must include the validation-selected sites and the paper's attention-output layers 14 and 17 even when they are not selected, with validation ranks, seven-actor bootstrap intervals, full predictions, and five-by-five confusion matrices. Support requires the winning site to be attention output in layers 10-17, a max-T p-value at most 0.05, a held-out lower accuracy bound above 0.20, and a positive lower bound against the same-layer median of the other nine operations. The [12-clip canary](https://github.com/Amal-David/icml-2026-cocoemo-repro/blob/34cac6d/configs/claim23-ravdess-canary.yaml) is structural only. CosyVoice2 GPU evidence remains pending, and IndexTTS2 remains blocked by its released adapter/vector incompatibilities.
