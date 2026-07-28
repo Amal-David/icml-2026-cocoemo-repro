@@ -66,6 +66,10 @@ def run_stage(config: ReproConfig, *, run_root: Path) -> dict[str, Any]:
         from repro.claim4_runtime import run_claim4_runtime_canary
 
         return run_claim4_runtime_canary(config, repo=REPO, run_root=run_root)
+    if config.stage == "claim4" and "claim4" in config.raw:
+        from repro.claim4_full import run_claim4_runtime_full
+
+        return run_claim4_runtime_full(config, repo=REPO, run_root=run_root)
     raise ContractError(
         f"stage {config.stage!r} has no implemented evidence runner; refusing to emit a claim result"
     )
