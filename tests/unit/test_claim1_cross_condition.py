@@ -1,12 +1,14 @@
 import torch
+import pytest
 
 from repro.claim1_cross_condition import (
     FLOW_FIELDS,
     LLM_TOKEN_FIELDS,
     changed_tensor_fields,
     merge_cross_conditioned_inputs,
-    synthesize_cross_conditioned,
+    synthesize_cross_conditioned_with_llm_trace,
 )
+from repro.contracts import ContractError
 
 
 def frontend_fixture(offset: int) -> dict[str, torch.Tensor]:
@@ -25,6 +27,7 @@ def frontend_fixture(offset: int) -> dict[str, torch.Tensor]:
         "prompt_speech_feat_len": torch.tensor([2 + offset]),
         "llm_embedding": torch.full((1, 4), 40.0 + offset),
         "flow_embedding": torch.full((1, 4), 50.0 + offset),
+        "source_speech_token": torch.empty((1, 0), dtype=torch.int32),
     }
     return {**common, **varying}
 
@@ -59,11 +62,60 @@ def test_native_bundle_sensitivity_also_changes_llm_embedding() -> None:
 
 
 def test_synthesis_uses_language_model_path() -> None:
+    class FakeLLM:
+        def inference(self):
+            yield torch.tensor([1])
+
     class FakeModel:
+        def __init__(self) -> None:
+            self.llm = FakeLLM()
+
         def tts(self, **kwargs):
-            assert "source_speech_token" not in kwargs
+            assert kwargs["source_speech_token"].numel() == 0
             assert not kwargs["stream"]
+            next(self.llm.inference())
             yield {"tts_speech": torch.ones(1, 16)}
 
-    output = synthesize_cross_conditioned(FakeModel(), frontend_fixture(0))
+    output, calls = synthesize_cross_conditioned_with_llm_trace(FakeModel(), frontend_fixture(0))
     assert output.shape == (1, 16)
+    assert calls == 1
+
+
+def test_llm_trace_rejects_skipped_or_multiple_calls_and_restores_method() -> None:
+    class FakeLLM:
+        def inference(self):
+            yield torch.tensor([1])
+
+    class NoCallModel:
+        def __init__(self) -> None:
+            self.llm = FakeLLM()
+
+        def tts(self, **kwargs):
+            yield {"tts_speech": torch.ones(1, 16)}
+
+    class TwoCallModel(NoCallModel):
+        def tts(self, **kwargs):
+            next(self.llm.inference())
+            next(self.llm.inference())
+            yield {"tts_speech": torch.ones(1, 16)}
+
+    for model, observed in ((NoCallModel(), 0), (TwoCallModel(), 2)):
+        original = model.llm.inference
+        with pytest.raises(ContractError, match=f"observed={observed}"):
+            synthesize_cross_conditioned_with_llm_trace(model, frontend_fixture(0))
+        assert model.llm.inference.__self__ is model.llm
+        assert model.llm.inference.__func__ is original.__func__
+
+
+def test_merge_requires_explicit_empty_source_speech_token() -> None:
+    neutral = frontend_fixture(0)
+    emotional = frontend_fixture(1)
+    without_source = dict(neutral)
+    without_source.pop("source_speech_token")
+    with pytest.raises(ContractError, match="source_speech_token"):
+        merge_cross_conditioned_inputs(without_source, emotional, condition="slm_driven")
+
+    nonempty = dict(neutral)
+    nonempty["source_speech_token"] = torch.tensor([[1]], dtype=torch.int32)
+    with pytest.raises(ContractError, match="empty tensor"):
+        merge_cross_conditioned_inputs(nonempty, emotional, condition="slm_driven")

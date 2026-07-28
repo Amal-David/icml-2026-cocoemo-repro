@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import threading
 from collections.abc import Iterator
 from typing import Any
 
@@ -53,7 +54,9 @@ def merge_cross_conditioned_inputs(
     if llm_embedding_mode not in {"neutral", "native_bundle"}:
         raise ContractError(f"unsupported LLM embedding mode: {llm_embedding_mode}")
 
-    required = set(COMMON_FIELDS + LLM_TOKEN_FIELDS + FLOW_FIELDS + ("llm_embedding",))
+    required = set(
+        COMMON_FIELDS + LLM_TOKEN_FIELDS + FLOW_FIELDS + ("llm_embedding", "source_speech_token")
+    )
     for label, values in (("neutral", neutral), ("emotional", emotional)):
         missing = sorted(required.difference(values))
         if missing:
@@ -72,9 +75,9 @@ def merge_cross_conditioned_inputs(
         for field in FLOW_FIELDS:
             merged[field] = emotional[field]
 
-    source = merged.get("source_speech_token")
-    if source is not None and (not isinstance(source, torch.Tensor) or source.shape[-1] != 0):
-        raise ContractError("source_speech_token must remain empty so the SLM path executes")
+    source = merged["source_speech_token"]
+    if not isinstance(source, torch.Tensor) or source.numel() != 0:
+        raise ContractError("source_speech_token must be an empty tensor so the SLM path executes")
     return merged
 
 
@@ -102,3 +105,45 @@ def synthesize_cross_conditioned(model: Any, model_input: dict[str, Any]) -> tor
     except StopIteration:
         return first["tts_speech"]
     raise ContractError("non-streaming cross-conditioned synthesis produced multiple outputs")
+
+
+def synthesize_cross_conditioned_with_llm_trace(
+    model: Any, model_input: dict[str, Any]
+) -> tuple[torch.Tensor, int]:
+    """Synthesize once while proving the CosyVoice SLM inference method ran.
+
+    The patched callable deliberately delegates to the original bound method;
+    it changes neither the input nor the RNG state.  It is installed only for
+    one render, restored even when synthesis raises, and rejects an output
+    where `model.llm.inference` was never reached.
+    """
+
+    llm = getattr(model, "llm", None)
+    original = getattr(llm, "inference", None)
+    if not callable(original):
+        raise ContractError("CosyVoice model has no callable llm.inference for Claim 1 tracing")
+    calls = 0
+    calls_lock = threading.Lock()
+
+    def counted_inference(*args: Any, **kwargs: Any) -> Any:
+        nonlocal calls
+        with calls_lock:
+            calls += 1
+        return original(*args, **kwargs)
+
+    instance_values = getattr(llm, "__dict__", {})
+    had_instance_override = "inference" in instance_values
+    original_instance_override = instance_values.get("inference")
+    setattr(llm, "inference", counted_inference)
+    try:
+        audio = synthesize_cross_conditioned(model, model_input)
+    finally:
+        if had_instance_override:
+            setattr(llm, "inference", original_instance_override)
+        else:
+            delattr(llm, "inference")
+    if calls != 1:
+        raise ContractError(
+            f"Claim 1 render must invoke model.llm.inference exactly once, observed={calls}"
+        )
+    return audio, calls

@@ -1,0 +1,81 @@
+run:
+  name: claim1-ravdess-scaled-directional
+  seed: 20260728
+  stage: claim1
+
+claims: [1]
+
+claim1:
+  protocol: scaled_directional
+  source_url: https://github.com/FunAudioLLM/CosyVoice.git
+  source_revision: 074ca6dc9e80a2f424f1f74b48bdd7d3fea531cc
+  model_id: FunAudioLLM/CosyVoice2-0.5B
+  model_revision: eec1ae6c79877dbd9379285cf8789c9e0879293d
+  ravdess:
+    source_url: https://zenodo.org/records/1188976
+    release: RAVDESS-v1.0-audio-speech
+    license: CC BY-NC-SA 4.0
+    license_acknowledged: true
+    acquire: true
+    archive_url: https://zenodo.org/api/records/1188976/files/Audio_Speech_Actors_01-24.zip/content
+    archive_filename: Audio_Speech_Actors_01-24.zip
+    archive_size_bytes: 208468073
+    archive_md5: bc696df654c87fed845eb13823edef8a
+    expected_archive_wavs: 1440
+    root: .cache/ravdess/Audio_Speech_Actors_01-24
+    expected_total_groups: 96
+  # One complete actor-disjoint unit per actor, balanced across the two
+  # sentences and two repetitions: five groups for each statement/repetition cell.
+  max_groups: 20
+  selected_group_ids:
+    - actor_01_statement_01_repetition_01
+    - actor_02_statement_01_repetition_02
+    - actor_03_statement_02_repetition_01
+    - actor_04_statement_02_repetition_02
+    - actor_05_statement_01_repetition_01
+    - actor_06_statement_01_repetition_02
+    - actor_07_statement_02_repetition_01
+    - actor_08_statement_02_repetition_02
+    - actor_09_statement_01_repetition_01
+    - actor_10_statement_01_repetition_02
+    - actor_11_statement_02_repetition_01
+    - actor_12_statement_02_repetition_02
+    - actor_13_statement_01_repetition_01
+    - actor_14_statement_01_repetition_02
+    - actor_15_statement_02_repetition_01
+    - actor_16_statement_02_repetition_02
+    - actor_17_statement_01_repetition_01
+    - actor_18_statement_01_repetition_02
+    - actor_19_statement_02_repetition_01
+    - actor_20_statement_02_repetition_02
+  target_emotions: [angry, happy, sad, surprise]
+  expected_group_emotion_pairs: 80
+  expected_rendered_wavs: 400
+  conditions:
+    [neutral_both, slm_driven, flow_driven, emotional_both, permuted_emotion_both]
+  llm_embedding_mode: neutral
+  audio_quality:
+    max_clipping_fraction: 0.001
+  acoustic_metrics:
+    analysis_sample_rate: 16000
+    frame_seconds: 0.025
+    hop_seconds: 0.010
+    min_f0_hz: 50.0
+    max_f0_hz: 500.0
+    min_periodicity: 0.35
+    activity_dynamic_range_db: 40.0
+    silence_floor_db: -70.0
+    alignment_points: 100
+    minimum_voiced_frames: 3
+    minimum_active_frames: 3
+    syllable_peak_min_separation_seconds: 0.120
+    bootstrap_replicates: 10000
+    bootstrap_seed: 20260728
+
+evidence:
+  claim_evidence: true
+  purpose: >-
+    Fixed public-RAVDESS directional test: 20 actor-clustered groups x four non-neutral
+    targets x five conditions = 400 rendered WAVs and 80 paired target-emotion units.
+    The permuted control is the stable no-fixed-point cycle
+    angry-to-happy-to-sad-to-surprise-to-angry.

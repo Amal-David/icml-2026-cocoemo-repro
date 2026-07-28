@@ -10,7 +10,13 @@ Source lock:
 
 Paper anchor: Section 2.1, Figure 2, and Table 1. On 300 CosyVoice2 cross-conditioned samples, the paper reports lower F0 CCC for SLM-driven speech than flow-driven speech (`0.109` versus `0.305`), lower energy CCC (`0.308` versus `0.737`), and higher speaking-rate standard deviation (`0.691` versus `0.518`).
 
-Required evidence: paired cross-conditioning with all-neutral and permuted-label controls, complete WAV accounting, per-sample F0/energy/rate, and paired bootstrap intervals. The paper does not identify the Table 1 source set, so a public RAVDESS test is directional rather than exact.
+Required evidence: paired cross-conditioning with all-neutral and permuted-emotion controls, complete WAV accounting, per-sample F0/energy/rate, and actor-cluster bootstrap intervals. The paper does not identify the Table 1 source set, its feature extractor, alignment procedure, or speaking-rate definition, so a public RAVDESS test is directional rather than exact.
+
+Executable protocol: `claim1-ravdess-gpu-smoke.yaml` is deliberately non-evidentiary (one group x one target x three causal conditions = 3 renders). `claim1-ravdess-scaled-directional.yaml` fixes a substantive public proxy: 20 explicitly listed groups from exactly 20 distinct RAVDESS actors x four non-neutral targets x five conditions (neutral-both, SLM-driven, Flow-driven, emotional-both, and a deterministic no-fixed-point permuted-emotion-both control) = 400 rendered WAVs and 80 group-emotion rows per condition. The older 1,440-WAV description was arithmetically incompatible with the non-neutral RAVDESS target set and is not used by the executable configuration.
+
+Every render passes an explicit empty `source_speech_token` and is rejected unless the pinned CosyVoice `model.llm.inference` method is observed exactly once. The deterministic seed is derived from the base seed plus `(group_id, target_emotion)` and reset before every matched condition, so arm ordering cannot change decoding draws. A pinned maximum clipping fraction of `0.001` and finite-audio checks are enforced. Equal generated-WAV hashes remain a reported result rather than a failure.
+
+The only pass/fail outcome for this public proxy is machine-readable signed directional support: all three actor-cluster bootstrap intervals must exclude zero in the paper's reported direction to yield `directional_supported`; any confidently reversed direction yields `directional_failed`; otherwise it is `directional_inconclusive`. Whether a paper contrast lies inside a proxy interval is retained as a diagnostic only and never changes that outcome.
 
 ## Claim 2: mean-difference steering vectors
 
