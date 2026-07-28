@@ -13,11 +13,18 @@
 - Fixed runner: `uv run --extra cosyvoice2 python repro/run_all.py --config configs/active.yaml`
 - Pinned CosyVoice2 GPU baseline: [`configs/baseline-cosyvoice2.yaml`](configs/baseline-cosyvoice2.yaml)
 - Blinded human-study preregistration: [`study/PREREGISTRATION.md`](study/PREREGISTRATION.md)
-- Durable artifacts: [Hugging Face dataset](https://huggingface.co/datasets/amal-david/cocoemo-repro-artifacts)
+- Durable artifacts: [Hugging Face dataset](https://huggingface.co/datasets/amal-david/cocoemo-repro-artifacts) ([completion contract](docs/artifact_persistence.md))
 - Local logbook preview: `trackio logbook serve .`
 
 The harness refuses partial sample counts, missing required metrics, dirty-tree
-claim provenance, incompatible steering vectors, and silent evaluator failures.
+claim provenance, incompatible steering vectors, silent evaluator failures, and
+non-preflight runs that lack an `HF_TOKEN` for durable evidence persistence.
+Only public derived reports and hashes are uploaded; WAVs, source datasets,
+weights, activations, caches, and credentials remain local. A Hub run is valid
+only after one parent-guarded atomic Hub commit contains its frozen reports,
+manifest, and remote `COMPLETE.json`. The resulting commit-pinned URLs, rather
+than the mutable `main` branch path, are recorded locally as the durable
+evidence links.
 Exact ESD and IEMOCAP replications remain explicitly blocked without licensed
 access; public-data experiments are labeled as directional or proxy evidence.
 

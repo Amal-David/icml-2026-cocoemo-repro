@@ -7,7 +7,7 @@ claims: [4]
 
 claim4_canary:
   base_config: claim4-cremad-mixed-directional.yaml
-  base_config_sha256: 21aa6c61bbabd0e732f801966abc55b85e1575b0ec002bc8f75f92a419ea3db6
+  base_config_sha256: f8621332dd6e0bbbd9ba9db3b8eb87870bcd57efdabc99734c6ecf0dd81e654e
   expected_samples: 1
   expected_rendered_wavs: 7
 

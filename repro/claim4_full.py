@@ -19,15 +19,18 @@ import numpy as np
 
 from repro.claim4_evaluation import build_claim4_arms, decide_claim4_directional_proxy
 from repro.claim4_evaluators import claim4_proportion_metrics, load_frozen_claim4_evaluators
-from repro.claim4_protocol import CLAIM4_ARM_NAMES, build_claim4_manifest, ensure_lfs_wav, fetch_url_bytes, write_manifest
+from repro.claim4_protocol import CLAIM4_ARM_NAMES, build_claim4_manifest, write_manifest
 from repro.claim4_runtime import (
     _atomic_verified_download,
     _check_generated_wav,
-    _lfs_pointer_and_download_url,
     audit_claim4_wav_hashes,
     claim4_target_and_reference_text,
+    load_claim4_frozen_assets,
     load_claim4_vectors,
+    materialize_claim4_wav_pair,
     parse_claim4_settings,
+    _require_claim4_full_canary_receipt,
+    _require_claim4_model_sample_rate,
     reset_claim4_generation_seed,
 )
 from repro.claim4_protocol import cremad_actor_id, is_claim4_eligible
@@ -47,6 +50,9 @@ def run_claim4_runtime_full(config: ReproConfig, *, repo: Path, run_root: Path) 
     settings = parse_claim4_settings(config)
     if settings.mode != "full":
         raise ContractError("Claim 4 full runner requires the frozen full configuration")
+    canary_receipt = _require_claim4_full_canary_receipt(
+        config=config, settings=settings, repo=repo
+    )
     try:
         import torch
     except ImportError as exc:
@@ -68,6 +74,7 @@ def run_claim4_runtime_full(config: ReproConfig, *, repo: Path, run_root: Path) 
     if len(manifest) != settings.expected_samples or len({item.actor_id for item in manifest}) != settings.actor_count:
         raise ContractError("Claim 4 full manifest accounting changed")
     write_manifest(run_root / "claim4_manifest_full.json", manifest)
+    assets = load_claim4_frozen_assets(settings, repo=repo, manifest=manifest)
 
     vectors = load_claim4_vectors(settings, repo=repo)
     from repro.gpu_baseline import _prepare_cosyvoice, _prepare_model
@@ -86,6 +93,9 @@ def run_claim4_runtime_full(config: ReproConfig, *, repo: Path, run_root: Path) 
     if getattr(cosyvoice2, "generate_steered_speech", None) is None:
         raise ContractError("Claim 4 required CosyVoice2 generation API is unavailable")
     model = cosyvoice2.load_model(str(model_path))
+    _require_claim4_model_sample_rate(
+        model=model, expected_sample_rate=settings.audio_quality["sample_rate_hz"]
+    )
 
     output_dir = run_root / "wavs"
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -94,15 +104,8 @@ def run_claim4_runtime_full(config: ReproConfig, *, repo: Path, run_root: Path) 
     generated: list[dict[str, Any]] = []
     started = time.monotonic()
     for item in manifest:
-        target_pointer, target_url = _lfs_pointer_and_download_url(settings, item.file_name)
-        reference_pointer, reference_url = _lfs_pointer_and_download_url(settings, item.reference_file_name)
-        target_wav = ensure_lfs_wav(
-            cache_root=cache_root, item=item, pointer=target_pointer,
-            fetch_content=lambda url=target_url: fetch_url_bytes(url),
-        )
-        reference_wav = ensure_lfs_wav(
-            cache_root=cache_root, item=item, filename=item.reference_wav_name, pointer=reference_pointer,
-            fetch_content=lambda url=reference_url: fetch_url_bytes(url),
+        target_wav, reference_wav, target_asset, reference_asset = materialize_claim4_wav_pair(
+            cache_root=cache_root, item=item, assets=assets,
         )
         if target_wav == reference_wav or item.reference_provided_label != "N" or item.reference_majority_labels != ("N",):
             raise ContractError("Claim 4 full runner must use a distinct same-actor neutral reference")
@@ -133,8 +136,10 @@ def run_claim4_runtime_full(config: ReproConfig, *, repo: Path, run_root: Path) 
                 "sample_seed": arm["sample_seed"], "vector_l2_norm": arm["l2_norm"],
                 "steering_vector_sha256": hashlib.sha256(np.asarray(arm["vector"], dtype=np.float32).tobytes()).hexdigest(),
                 "generation_seconds": time.monotonic() - arm_started,
-                "target_lfs_oid_sha256": target_pointer.oid_sha256,
-                "reference_lfs_oid_sha256": reference_pointer.oid_sha256,
+                "target_git_blob_sha1": target_asset.git_blob_sha1,
+                "reference_git_blob_sha1": reference_asset.git_blob_sha1,
+                "target_lfs_oid_sha256": target_asset.lfs_oid_sha256,
+                "reference_lfs_oid_sha256": reference_asset.lfs_oid_sha256,
                 "target_wav": str(target_wav.relative_to(repo)), "reference_wav": str(reference_wav.relative_to(repo)),
                 "target_text": target_text, "reference_text": reference_text,
                 "target_distribution": item.distribution, "reference_majority_labels": list(item.reference_majority_labels),
@@ -202,6 +207,8 @@ def run_claim4_runtime_full(config: ReproConfig, *, repo: Path, run_root: Path) 
         "stage": "claim4", "claim_evidence": True, "verdict": decision.verdict,
         "requested_rendered_wavs": settings.expected_rendered_wavs, "generated_wavs": len(generated),
         "evaluated_wavs": len(evaluated), "wav_hash_audit": hash_audit,
+        "canary_receipt": canary_receipt,
+        "license_attestations": settings.license_attestations,
         "decision": {"comparisons": decision.comparisons, "rule": decision.rule},
         "elapsed_seconds": time.monotonic() - started,
         "limitations": [

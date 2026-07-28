@@ -120,7 +120,29 @@ def run_claim5_runtime(config: ReproConfig, *, repo: Path, run_root: Path) -> di
             raise ContractError(f"Claim 5 emotional reference is missing: {reference_path}")
         reference_records.append({"actor_id": cell.actor_id, "target": cell.target, "embedding": evaluator.emotion_embedding(reference_path).tolist(), "reference_sha256": sha256_file(reference_path)})
     prototypes = leave_one_actor_out_prototypes(reference_records)
-    (run_root / "claim5_reference_embeddings.jsonl").write_text("".join(json.dumps(value, sort_keys=True) + "\n" for value in reference_records), encoding="utf-8")
+    reference_embeddings_path = run_root / "claim5_reference_embeddings.jsonl"
+    reference_embeddings_path.write_text(
+        "".join(json.dumps(value, sort_keys=True) + "\n" for value in reference_records),
+        encoding="utf-8",
+    )
+    # The vectors are required to reproduce the local LOAO calculation, but
+    # are not public artifacts.  Publish only the bank's cardinality and a
+    # digest that binds the hidden local computation to the derived metrics.
+    (run_root / "claim5_reference_embedding_manifest.json").write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "scope": "aggregate_and_hash_only_no_raw_embeddings",
+                "source_cells": len(full_cells),
+                "source_embeddings": len(reference_records),
+                "reference_embeddings_sha256": sha256_file(reference_embeddings_path),
+            },
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
 
     output_dir = run_root / "wavs"
     output_dir.mkdir(parents=True, exist_ok=True)

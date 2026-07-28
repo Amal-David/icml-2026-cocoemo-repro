@@ -113,6 +113,41 @@ def test_lfs_integrity_failure_never_promotes_cache(tmp_path: Path) -> None:
     assert not list(tmp_path.rglob("*.wav"))
 
 
+def test_lfs_cache_rejects_symlinked_roots_parents_targets_and_traversal(tmp_path: Path) -> None:
+    payload = b"valid wav bytes"
+    pointer = LfsPointer(hashlib.sha256(payload).hexdigest(), len(payload))
+    item = Claim4ManifestItem(
+        actor_id="1001", row_id=1, file_name="1001_IEO_HAP_XX", provided_label="H",
+        distribution={"p_angry": 0.4, "p_happy": 0.2, "p_sad": 0.0, "p_surprise": 0.0, "p_neutral": 0.4},
+        reference_row_id=2, reference_file_name="1001_IEO_NEU_XX", reference_provided_label="N",
+        reference_majority_labels=("N",),
+    )
+    outside = tmp_path / "outside"
+    outside.mkdir()
+    linked_root = tmp_path / "linked-root"
+    linked_root.symlink_to(outside, target_is_directory=True)
+    with pytest.raises(ContractError, match="cache root symlink"):
+        ensure_lfs_wav(cache_root=linked_root, item=item, pointer=pointer, fetch_content=lambda: payload)
+
+    linked_parent = tmp_path / "linked-parent"
+    linked_parent.symlink_to(outside, target_is_directory=True)
+    with pytest.raises(ContractError, match="cache root symlink"):
+        ensure_lfs_wav(cache_root=linked_parent / "cache", item=item, pointer=pointer, fetch_content=lambda: payload)
+
+    with pytest.raises(ContractError, match="unsafe CREMA-D cache root"):
+        ensure_lfs_wav(
+            cache_root=tmp_path / "safe" / ".." / "escaped",
+            item=item, pointer=pointer, fetch_content=lambda: payload,
+        )
+
+    cache_root = tmp_path / "cache"
+    target_parent = cache_root / item.actor_id
+    target_parent.mkdir(parents=True)
+    (target_parent / item.wav_name).symlink_to(outside / "untrusted.wav")
+    with pytest.raises(ContractError, match="cache target symlink"):
+        ensure_lfs_wav(cache_root=cache_root, item=item, pointer=pointer, fetch_content=lambda: payload)
+
+
 def test_lfs_pointer_rejects_non_pointer_content() -> None:
     with pytest.raises(ContractError, match="unexpected version header"):
         parse_lfs_pointer(b"not a pointer")

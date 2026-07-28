@@ -34,6 +34,7 @@ cosyvoice2 = [
     "omegaconf==2.3.0",
     "onnx==1.16.0",
     "onnxruntime-gpu==1.23.2; sys_platform == 'linux'",
+    "openai-whisper==20231117",
     "protobuf>=4.25,<5",
     "pyworld==0.3.4",
     "soundfile==0.12.1",
@@ -54,6 +55,10 @@ Homepage = "https://github.com/wsssy/CoCoEmo"
 
 [tool.setuptools.packages.find]
 include = ["cocoemo*", "repro*", "study*"]
+
+[tool.uv.extra-build-dependencies]
+# The pinned upstream Whisper release imports pkg_resources while building.
+openai-whisper = ["setuptools<81"]
 
 [build-system]
 requires = ["setuptools>=64"]

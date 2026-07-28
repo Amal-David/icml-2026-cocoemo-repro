@@ -1,0 +1,969 @@
+{
+  "assets": [
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1001_IOM_HAP_XX.wav",
+      "filename": "1001_IOM_HAP_XX.wav",
+      "git_blob_sha1": "6f9e4e5fee0fe7922c185a94c85de16b1ab95423",
+      "lfs_oid_sha256": "54a8162c71d91fb536700f476dfec833f53bd579c83cab131e12ff4b98cb0af2",
+      "repository_path": "AudioWAV/1001_IOM_HAP_XX.wav",
+      "size_bytes": 64108
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1001_WSI_NEU_XX.wav",
+      "filename": "1001_WSI_NEU_XX.wav",
+      "git_blob_sha1": "7a1af40463206e8e0cbf11b715daad7e19dc5859",
+      "lfs_oid_sha256": "bde7dad2326708b9c83360fa8a95d61c65c7d6f92de529a09c5f688c34524651",
+      "repository_path": "AudioWAV/1001_WSI_NEU_XX.wav",
+      "size_bytes": 87598
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1005_IEO_HAP_MD.wav",
+      "filename": "1005_IEO_HAP_MD.wav",
+      "git_blob_sha1": "1ab38c4acbc26f2785b04948919c36c43307163f",
+      "lfs_oid_sha256": "7939e21c2a02b4a4d5904bffe8f1f6a62d784866798e76b961146056363d1f2a",
+      "repository_path": "AudioWAV/1005_IEO_HAP_MD.wav",
+      "size_bytes": 69446
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1005_TIE_NEU_XX.wav",
+      "filename": "1005_TIE_NEU_XX.wav",
+      "git_blob_sha1": "9569be20dc558ff2d84a6d8d1f27d33a852ecd64",
+      "lfs_oid_sha256": "707f9107a1706273a54710472181ae2242b7cc66a77b465d91198d207abb37ad",
+      "repository_path": "AudioWAV/1005_TIE_NEU_XX.wav",
+      "size_bytes": 91868
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1010_DFA_HAP_XX.wav",
+      "filename": "1010_DFA_HAP_XX.wav",
+      "git_blob_sha1": "1b85c24e57b4a8e53623450818efb3cfeb07a118",
+      "lfs_oid_sha256": "f39ef9d665b781244cacb2f4e859d7e5397893085a1bbb16172bad15f325d0da",
+      "repository_path": "AudioWAV/1010_DFA_HAP_XX.wav",
+      "size_bytes": 60904
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1010_TSI_NEU_XX.wav",
+      "filename": "1010_TSI_NEU_XX.wav",
+      "git_blob_sha1": "838fca44d932629b1c9ee2c9f1aae8a3d7fba894",
+      "lfs_oid_sha256": "efcdd69d8421622075f5db176b529e61501d71d8bb87d10538f9fef201908bee",
+      "repository_path": "AudioWAV/1010_TSI_NEU_XX.wav",
+      "size_bytes": 67312
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1011_ITH_ANG_XX.wav",
+      "filename": "1011_ITH_ANG_XX.wav",
+      "git_blob_sha1": "69dca3715b12ae8ac4d8bb305d950632cf8adba9",
+      "lfs_oid_sha256": "165c4318dbd260b083d47776ebc749bb64ff7161d456374f5cfecff94827f1ec",
+      "repository_path": "AudioWAV/1011_ITH_ANG_XX.wav",
+      "size_bytes": 96140
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1011_ITS_NEU_XX.wav",
+      "filename": "1011_ITS_NEU_XX.wav",
+      "git_blob_sha1": "488ffa698e83307c2143f437ba5a956cfe234cec",
+      "lfs_oid_sha256": "f5467d4f5d563afe7276e24f7d14960e3117a83048e763cf08052390bfd25966",
+      "repository_path": "AudioWAV/1011_ITS_NEU_XX.wav",
+      "size_bytes": 77988
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1012_DFA_NEU_XX.wav",
+      "filename": "1012_DFA_NEU_XX.wav",
+      "git_blob_sha1": "98989e5ba5821a6d78c9816cee5f98bb63570686",
+      "lfs_oid_sha256": "a748592e2eafd3c2ff92318d41271e3ccc644c198c370d17e118cb8dbf1324cd",
+      "repository_path": "AudioWAV/1012_DFA_NEU_XX.wav",
+      "size_bytes": 73718
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1012_IEO_SAD_LO.wav",
+      "filename": "1012_IEO_SAD_LO.wav",
+      "git_blob_sha1": "de8e955ac1be9992ff75375e25868623bebd862f",
+      "lfs_oid_sha256": "379a1850cb181af6ba6d038d9b5f9a68c24a54bbd8f345c621428ccafcf292f9",
+      "repository_path": "AudioWAV/1012_IEO_SAD_LO.wav",
+      "size_bytes": 76920
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1015_IWL_NEU_XX.wav",
+      "filename": "1015_IWL_NEU_XX.wav",
+      "git_blob_sha1": "e47c1d52dc111930c01decc6f35e2298e845d5b9",
+      "lfs_oid_sha256": "8307756a961b130e5bab9f73534e280312fe08b755e2788db0286967f5877f4a",
+      "repository_path": "AudioWAV/1015_IWL_NEU_XX.wav",
+      "size_bytes": 69446
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1015_WSI_HAP_XX.wav",
+      "filename": "1015_WSI_HAP_XX.wav",
+      "git_blob_sha1": "103657f2750bdfa5eae74469a86b734e0ee71ba1",
+      "lfs_oid_sha256": "f45ce70085fc784877d1383132fd723973c781deec6c30c9afdff1174509641b",
+      "repository_path": "AudioWAV/1015_WSI_HAP_XX.wav",
+      "size_bytes": 43820
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1017_TAI_SAD_XX.wav",
+      "filename": "1017_TAI_SAD_XX.wav",
+      "git_blob_sha1": "8e73d954ca5c25b566327a7f545b23832b6742d1",
+      "lfs_oid_sha256": "1731444d446aef4bb2276117ef0c1ccda2bd84cf50720aded4628a97caaa9249",
+      "repository_path": "AudioWAV/1017_TAI_SAD_XX.wav",
+      "size_bytes": 59836
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1017_WSI_NEU_XX.wav",
+      "filename": "1017_WSI_NEU_XX.wav",
+      "git_blob_sha1": "603dabe113ec90d00825088e417024da86958f79",
+      "lfs_oid_sha256": "d08a70b02c25268e26cfcc42d132f96d439aaa18ac96b62e20cb0a289af8bd72",
+      "repository_path": "AudioWAV/1017_WSI_NEU_XX.wav",
+      "size_bytes": 70514
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1018_IEO_HAP_MD.wav",
+      "filename": "1018_IEO_HAP_MD.wav",
+      "git_blob_sha1": "09146a1a7a6b1616a759c01dbd12d406c4d362d3",
+      "lfs_oid_sha256": "82e52fe8954a7cd8eb08e9b2522dcbe388672c535e8f7148cd152bbcdd25b977",
+      "repository_path": "AudioWAV/1018_IEO_HAP_MD.wav",
+      "size_bytes": 52362
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1018_IOM_NEU_XX.wav",
+      "filename": "1018_IOM_NEU_XX.wav",
+      "git_blob_sha1": "7da4b22cf6467f4def135a1404c63f9c8667a5ce",
+      "lfs_oid_sha256": "f730ed20ea0b4ad1dcc3a305eb5888404612ad948a8e41405ca8ba994c28b5ee",
+      "repository_path": "AudioWAV/1018_IOM_NEU_XX.wav",
+      "size_bytes": 63040
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1021_TIE_NEU_XX.wav",
+      "filename": "1021_TIE_NEU_XX.wav",
+      "git_blob_sha1": "ca39c0b6c6e7ab040422f516deef009b1589f29a",
+      "lfs_oid_sha256": "c2006fa29184461ff8a5a7b27802dfee8e2955e383a5ad34b51d3c5a942e1a74",
+      "repository_path": "AudioWAV/1021_TIE_NEU_XX.wav",
+      "size_bytes": 80124
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1021_WSI_HAP_XX.wav",
+      "filename": "1021_WSI_HAP_XX.wav",
+      "git_blob_sha1": "5f62fca291becb4d62839a66466beac1740df261",
+      "lfs_oid_sha256": "42e11978f406090235ad60338f6e1e5a37ec71e22ec882685bf913e57d021069",
+      "repository_path": "AudioWAV/1021_WSI_HAP_XX.wav",
+      "size_bytes": 100410
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1022_ITH_ANG_XX.wav",
+      "filename": "1022_ITH_ANG_XX.wav",
+      "git_blob_sha1": "88e87a30ed644e9d523c3cb78dfe3d5f29ea090b",
+      "lfs_oid_sha256": "bd2b8ea5e42785a8ca9d6fc9fb6db83306397a80375b779c41a5cde8855c29a6",
+      "repository_path": "AudioWAV/1022_ITH_ANG_XX.wav",
+      "size_bytes": 103614
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1022_MTI_NEU_XX.wav",
+      "filename": "1022_MTI_NEU_XX.wav",
+      "git_blob_sha1": "397ab04bb7730624350808d01df9a198f8e00c23",
+      "lfs_oid_sha256": "b72a611253fac82f2bedb7711834248183ef0d48c39581c157fa0bba8c9063d6",
+      "repository_path": "AudioWAV/1022_MTI_NEU_XX.wav",
+      "size_bytes": 85462
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1024_DFA_NEU_XX.wav",
+      "filename": "1024_DFA_NEU_XX.wav",
+      "git_blob_sha1": "421de8bd2f2d478d70dd356337b6ca426e96731f",
+      "lfs_oid_sha256": "2fdb4de653febacb1c92b0886a814d3e611d92a509cfc5842c034931a8ee29d0",
+      "repository_path": "AudioWAV/1024_DFA_NEU_XX.wav",
+      "size_bytes": 57702
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1024_IEO_HAP_LO.wav",
+      "filename": "1024_IEO_HAP_LO.wav",
+      "git_blob_sha1": "723aec73e2a3725180d635dc2e5bf78da32abcee",
+      "lfs_oid_sha256": "2cd415c6cc3180b01bd1c435a94b0cf1171671441828ba8eca01a022b82c4834",
+      "repository_path": "AudioWAV/1024_IEO_HAP_LO.wav",
+      "size_bytes": 60904
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1025_ITS_NEU_XX.wav",
+      "filename": "1025_ITS_NEU_XX.wav",
+      "git_blob_sha1": "2c7d6b87f5c0c86cea777bb86d084ebc188ad9e7",
+      "lfs_oid_sha256": "6ed79a13937a4156b33664e4eb1104522f150ca1c5d948feb57f47bf522fd9a7",
+      "repository_path": "AudioWAV/1025_ITS_NEU_XX.wav",
+      "size_bytes": 84394
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1025_TIE_FEA_XX.wav",
+      "filename": "1025_TIE_FEA_XX.wav",
+      "git_blob_sha1": "f842748cde3d1b0618b2215e90d7e00632667c22",
+      "lfs_oid_sha256": "53dc6f2a758752827ebc6965297a8450a5813d9aaae40736f4fe8e2ffb076889",
+      "repository_path": "AudioWAV/1025_TIE_FEA_XX.wav",
+      "size_bytes": 117494
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1026_TAI_HAP_XX.wav",
+      "filename": "1026_TAI_HAP_XX.wav",
+      "git_blob_sha1": "f4d6283770f1378ad4a8826299219c4554d0a7ba",
+      "lfs_oid_sha256": "af9cabfa038aa6229e3b9e0ec4c7fe428ca6bc6973d7d2f83c357803fe8546ee",
+      "repository_path": "AudioWAV/1026_TAI_HAP_XX.wav",
+      "size_bytes": 84394
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1026_TSI_NEU_XX.wav",
+      "filename": "1026_TSI_NEU_XX.wav",
+      "git_blob_sha1": "51efe3af87ad0ba7b3670c9cb46cdea150df4091",
+      "lfs_oid_sha256": "3e8ad8cc32b7109b308cb71930ac6c505dfa6c0bdaf54f108bfb7d76d5f01e63",
+      "repository_path": "AudioWAV/1026_TSI_NEU_XX.wav",
+      "size_bytes": 85462
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1027_DFA_FEA_XX.wav",
+      "filename": "1027_DFA_FEA_XX.wav",
+      "git_blob_sha1": "5130af7976edbe49a178c615a1f52815475d104f",
+      "lfs_oid_sha256": "1c167cdc96c9093361f47a0bf8edae17935eb4a37a116e5b1db5bb247de7727c",
+      "repository_path": "AudioWAV/1027_DFA_FEA_XX.wav",
+      "size_bytes": 68378
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1027_IOM_NEU_XX.wav",
+      "filename": "1027_IOM_NEU_XX.wav",
+      "git_blob_sha1": "86123fee667a706791efa656e183343d2e8afa21",
+      "lfs_oid_sha256": "ff2ef5f235a132300c50c413b80e38b61af5e3c734cb1ad4d9029f35898a100a",
+      "repository_path": "AudioWAV/1027_IOM_NEU_XX.wav",
+      "size_bytes": 72862
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1031_IWW_NEU_XX.wav",
+      "filename": "1031_IWW_NEU_XX.wav",
+      "git_blob_sha1": "9455a4759e4c0c17eeb28638c9e951c62cc1eaf3",
+      "lfs_oid_sha256": "9a3c33ce3995db94e5a0d68bf8000765754df74456a9ded93c790abd13622cba",
+      "repository_path": "AudioWAV/1031_IWW_NEU_XX.wav",
+      "size_bytes": 73718
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1031_MTI_DIS_XX.wav",
+      "filename": "1031_MTI_DIS_XX.wav",
+      "git_blob_sha1": "7e76739567710b6a14bc6192a66cf3b47552ad5c",
+      "lfs_oid_sha256": "7c5796b4585696a1a120905af37d8de6cc76a0d1be61659465125865f2b6a2a2",
+      "repository_path": "AudioWAV/1031_MTI_DIS_XX.wav",
+      "size_bytes": 94004
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1032_IOM_NEU_XX.wav",
+      "filename": "1032_IOM_NEU_XX.wav",
+      "git_blob_sha1": "d094a43cbca2a7cb48584242539fd6e73354ed3d",
+      "lfs_oid_sha256": "9a83ff2ae996cd49cab1f59cbce3d672a9d6c05c43fe0ee965b0437c57ebf885",
+      "repository_path": "AudioWAV/1032_IOM_NEU_XX.wav",
+      "size_bytes": 67312
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1032_TSI_HAP_XX.wav",
+      "filename": "1032_TSI_HAP_XX.wav",
+      "git_blob_sha1": "0e00bf5c908d76177e20a18f22187048c685d044",
+      "lfs_oid_sha256": "c8c6995659e3e6ccdc949fa1ebdfa91dd817ab0ba2d0fced53ff21b7ed563494",
+      "repository_path": "AudioWAV/1032_TSI_HAP_XX.wav",
+      "size_bytes": 79056
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1033_IWL_HAP_XX.wav",
+      "filename": "1033_IWL_HAP_XX.wav",
+      "git_blob_sha1": "a75d258ef17ee690aa9db39a389dca8153bddeab",
+      "lfs_oid_sha256": "f5aa2df0f070353243e53602539ec54563e0bae8ffd32ad7344eecb3b669fe98",
+      "repository_path": "AudioWAV/1033_IWL_HAP_XX.wav",
+      "size_bytes": 81192
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1033_MTI_NEU_XX.wav",
+      "filename": "1033_MTI_NEU_XX.wav",
+      "git_blob_sha1": "5d2d0fe095db48117a451a597200688086ba1c30",
+      "lfs_oid_sha256": "323e8fd35fe81009d68b25385f1281abf8c35a7dc82456a85d690ffe0abde805",
+      "repository_path": "AudioWAV/1033_MTI_NEU_XX.wav",
+      "size_bytes": 67312
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1034_IWW_NEU_XX.wav",
+      "filename": "1034_IWW_NEU_XX.wav",
+      "git_blob_sha1": "c9f83e132a16581f63c4ea49e8c0eb26004a951b",
+      "lfs_oid_sha256": "553955d144591590ca6aa852136bc11755fa6ae04ad5f39aca32358771e8af0a",
+      "repository_path": "AudioWAV/1034_IWW_NEU_XX.wav",
+      "size_bytes": 75854
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1034_TAI_HAP_XX.wav",
+      "filename": "1034_TAI_HAP_XX.wav",
+      "git_blob_sha1": "bdf1309fcdc7f77c4f2f6f29f0a20aaec61d8215",
+      "lfs_oid_sha256": "2207b1f2b7cf09c7d0d36e811cccfe68eaaac9413992cdc6b2d7e5bf6b2bffca",
+      "repository_path": "AudioWAV/1034_TAI_HAP_XX.wav",
+      "size_bytes": 91870
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1036_IEO_DIS_HI.wav",
+      "filename": "1036_IEO_DIS_HI.wav",
+      "git_blob_sha1": "6ba76434c320b7177fe051a43234f1ebf7041c01",
+      "lfs_oid_sha256": "10115a56a2e68e2ab74d72578db556deef5d3f19953cc84ea901e49cfa11952d",
+      "repository_path": "AudioWAV/1036_IEO_DIS_HI.wav",
+      "size_bytes": 90802
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1036_TIE_NEU_XX.wav",
+      "filename": "1036_TIE_NEU_XX.wav",
+      "git_blob_sha1": "acd4c7cb6ed7bd4307a9c85df8c7b3aa42a6e62d",
+      "lfs_oid_sha256": "02295c49d8e7ec29464f37c51edd08ca4fadac85626857f43a90bba9651c09d0",
+      "repository_path": "AudioWAV/1036_TIE_NEU_XX.wav",
+      "size_bytes": 76920
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1037_IEO_SAD_MD.wav",
+      "filename": "1037_IEO_SAD_MD.wav",
+      "git_blob_sha1": "ebab08d9a6c1989240ebc8c0f41236cc931aa4cb",
+      "lfs_oid_sha256": "fa5abf3a7f2f7006f18d047149ace3b1a52ab9dd41143fa8e86ffbbd270fd32f",
+      "repository_path": "AudioWAV/1037_IEO_SAD_MD.wav",
+      "size_bytes": 66244
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1037_WSI_NEU_XX.wav",
+      "filename": "1037_WSI_NEU_XX.wav",
+      "git_blob_sha1": "3b936868c90f089cb11103b5d21cd59d0ae512eb",
+      "lfs_oid_sha256": "89a24a22ce28c782c5a707a0000c45233a29758cb9be1335f879f61635081bc9",
+      "repository_path": "AudioWAV/1037_WSI_NEU_XX.wav",
+      "size_bytes": 87598
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1039_IWW_NEU_XX.wav",
+      "filename": "1039_IWW_NEU_XX.wav",
+      "git_blob_sha1": "f5a26b0d2346131a5a6e776b3563cf072503551a",
+      "lfs_oid_sha256": "8a32b63af32315360f09ada3369e87049a20fdd8e4560c50d955f49341d50833",
+      "repository_path": "AudioWAV/1039_IWW_NEU_XX.wav",
+      "size_bytes": 70514
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1039_TSI_SAD_XX.wav",
+      "filename": "1039_TSI_SAD_XX.wav",
+      "git_blob_sha1": "1955d5314a38130994778f40e766bd3dd91b2d79",
+      "lfs_oid_sha256": "23cc529985dafa4eeb30945c603c53ec4809995f82934ecf12274aa895ba1351",
+      "repository_path": "AudioWAV/1039_TSI_SAD_XX.wav",
+      "size_bytes": 82260
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1041_ITH_NEU_XX.wav",
+      "filename": "1041_ITH_NEU_XX.wav",
+      "git_blob_sha1": "8b01eb970184bd7e4d575a210abee736c299f1ec",
+      "lfs_oid_sha256": "84be230ff14dde7a58a8e25e3abd0cc5923ff6807e1ba6e59269c31a805f3c0d",
+      "repository_path": "AudioWAV/1041_ITH_NEU_XX.wav",
+      "size_bytes": 85462
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1041_ITS_HAP_XX.wav",
+      "filename": "1041_ITS_HAP_XX.wav",
+      "git_blob_sha1": "fc72007bc9130a414bf5cd7dc89cbdc905d54076",
+      "lfs_oid_sha256": "d5f1b0f5590747085e1364555212f99a852283bd4d9b1c2d655603c8a113bf0d",
+      "repository_path": "AudioWAV/1041_ITS_HAP_XX.wav",
+      "size_bytes": 58770
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1042_ITS_NEU_XX.wav",
+      "filename": "1042_ITS_NEU_XX.wav",
+      "git_blob_sha1": "38d78db6bca93e281dae1f339d87be5e5b216097",
+      "lfs_oid_sha256": "80b8a28b1b73de662ccecd95a327d176eeb4f71397d24de2488a647f86ce6a06",
+      "repository_path": "AudioWAV/1042_ITS_NEU_XX.wav",
+      "size_bytes": 70514
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1042_IWL_HAP_XX.wav",
+      "filename": "1042_IWL_HAP_XX.wav",
+      "git_blob_sha1": "adff435b564a4b33770d7862af06660f3547fd01",
+      "lfs_oid_sha256": "8faf84a12f33dea6b8aaf0fe2779237b518125a57163793917dc1756f28e69d0",
+      "repository_path": "AudioWAV/1042_IWL_HAP_XX.wav",
+      "size_bytes": 56634
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1044_ITH_HAP_XX.wav",
+      "filename": "1044_ITH_HAP_XX.wav",
+      "git_blob_sha1": "4146f155552c306c77ad0c458d116e781deb6f46",
+      "lfs_oid_sha256": "8ac7f4950e57b25d1b1247060955f4e9572bb7bb442dbb62af145c8f8ada4f6c",
+      "repository_path": "AudioWAV/1044_ITH_HAP_XX.wav",
+      "size_bytes": 95072
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1044_ITS_NEU_XX.wav",
+      "filename": "1044_ITS_NEU_XX.wav",
+      "git_blob_sha1": "0601f8fea197151c6b37df4055fc6ec237e59120",
+      "lfs_oid_sha256": "5c5cf0548cda668e84a029a33cd89d3fcb48374c8c9dedf7a910db36aa7f295e",
+      "repository_path": "AudioWAV/1044_ITS_NEU_XX.wav",
+      "size_bytes": 72650
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1045_IEO_NEU_XX.wav",
+      "filename": "1045_IEO_NEU_XX.wav",
+      "git_blob_sha1": "f43853a569cb642464ec583da14fae7add5f4444",
+      "lfs_oid_sha256": "f3daebe526034060edc9925016a332d737f9d2d3edbcc7604757f38a7c2c9575",
+      "repository_path": "AudioWAV/1045_IEO_NEU_XX.wav",
+      "size_bytes": 63040
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1045_IOM_FEA_XX.wav",
+      "filename": "1045_IOM_FEA_XX.wav",
+      "git_blob_sha1": "a22aefe03503588b38c9471839826499dd22a9e5",
+      "lfs_oid_sha256": "962f01e19e694157b93717321ef674ed9657fa00d042cbf89e1a500aa4c58f0d",
+      "repository_path": "AudioWAV/1045_IOM_FEA_XX.wav",
+      "size_bytes": 64108
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1046_DFA_NEU_XX.wav",
+      "filename": "1046_DFA_NEU_XX.wav",
+      "git_blob_sha1": "49182cd055721a197b31e5f1f169e8693b252aef",
+      "lfs_oid_sha256": "18cf4b276d264aadb26c1186df84414deb7096603b0b910358c0ac8c7f3b4dd7",
+      "repository_path": "AudioWAV/1046_DFA_NEU_XX.wav",
+      "size_bytes": 69446
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1046_WSI_HAP_XX.wav",
+      "filename": "1046_WSI_HAP_XX.wav",
+      "git_blob_sha1": "bcad728dd3990e0cdae07c53a2c2f681cd7a2337",
+      "lfs_oid_sha256": "f7b2b9b9eafde5c1d3557f7f9102567da4ae0c6939e5f9e5c1b8042eccad75cd",
+      "repository_path": "AudioWAV/1046_WSI_HAP_XX.wav",
+      "size_bytes": 55566
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1048_IWL_SAD_XX.wav",
+      "filename": "1048_IWL_SAD_XX.wav",
+      "git_blob_sha1": "2410814ee7a3eb378dd0e15587b3cd487fdf0e5f",
+      "lfs_oid_sha256": "78c1529cb78f5f715389018ffbcada276ee77ac04197ca995996710c0ccb9464",
+      "repository_path": "AudioWAV/1048_IWL_SAD_XX.wav",
+      "size_bytes": 84394
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1048_WSI_NEU_XX.wav",
+      "filename": "1048_WSI_NEU_XX.wav",
+      "git_blob_sha1": "295fe927525184abfa51dd95dbc2d1f4802744a4",
+      "lfs_oid_sha256": "ceab4b80e64a5431ec9e70d32381158a83046d3727a4a20cff3ce5d7d481a808",
+      "repository_path": "AudioWAV/1048_WSI_NEU_XX.wav",
+      "size_bytes": 83328
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1049_DFA_NEU_XX.wav",
+      "filename": "1049_DFA_NEU_XX.wav",
+      "git_blob_sha1": "59fc22d0d44b09e95f838c5372f3ce3f00207229",
+      "lfs_oid_sha256": "4d8ef0996d6c213e5923f2145cc14d4bd139a994eb4e5beddce52137da20e540",
+      "repository_path": "AudioWAV/1049_DFA_NEU_XX.wav",
+      "size_bytes": 81192
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1049_IEO_DIS_MD.wav",
+      "filename": "1049_IEO_DIS_MD.wav",
+      "git_blob_sha1": "0fc4ad5abe5218bbabb7db04d282247ed8f520ec",
+      "lfs_oid_sha256": "f3dcfdc08c77dec148e4fa5691fbccf025fb7405019ca30e56b0d296cc117523",
+      "repository_path": "AudioWAV/1049_IEO_DIS_MD.wav",
+      "size_bytes": 75852
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1050_IEO_DIS_HI.wav",
+      "filename": "1050_IEO_DIS_HI.wav",
+      "git_blob_sha1": "75997bffbd725aba80fa902a18fd6111185725ad",
+      "lfs_oid_sha256": "d165dbcdf6a512cd5aa4760c39043b72a12acccfc9d7115d9c5d67e4ab71e5a5",
+      "repository_path": "AudioWAV/1050_IEO_DIS_HI.wav",
+      "size_bytes": 64108
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1050_IEO_NEU_XX.wav",
+      "filename": "1050_IEO_NEU_XX.wav",
+      "git_blob_sha1": "d38deaeb8cfa3a122d85f2bf88281aadacd5cfbe",
+      "lfs_oid_sha256": "e2b61a6254c660d16b17e397bd20500846afcc677600fa1b116d4e134fc8fda7",
+      "repository_path": "AudioWAV/1050_IEO_NEU_XX.wav",
+      "size_bytes": 66244
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1051_IWL_HAP_XX.wav",
+      "filename": "1051_IWL_HAP_XX.wav",
+      "git_blob_sha1": "d3e7104826e8fe45b5cfe95cc90c54e8fd3be0c1",
+      "lfs_oid_sha256": "381ade7aaa9fad985d7147ae790c95c6849af5060c4a6339b8030f0dfc979704",
+      "repository_path": "AudioWAV/1051_IWL_HAP_XX.wav",
+      "size_bytes": 75852
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1051_WSI_NEU_XX.wav",
+      "filename": "1051_WSI_NEU_XX.wav",
+      "git_blob_sha1": "f3e05e68dac56a21c11c1e426a62604723fb6a14",
+      "lfs_oid_sha256": "5080e3796280acb650bd699b67d03ea189ab95f31d2ea4bfadce7e247f6f1ae9",
+      "repository_path": "AudioWAV/1051_WSI_NEU_XX.wav",
+      "size_bytes": 68378
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1052_IOM_NEU_XX.wav",
+      "filename": "1052_IOM_NEU_XX.wav",
+      "git_blob_sha1": "7ccc86179fb31a75445bbef2762becfe9347d0ed",
+      "lfs_oid_sha256": "a26ed744d9ff7c47ed30a5bc4a319760907b612ac7fbc84ecaad2eb76d32b364",
+      "repository_path": "AudioWAV/1052_IOM_NEU_XX.wav",
+      "size_bytes": 89734
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1052_WSI_SAD_XX.wav",
+      "filename": "1052_WSI_SAD_XX.wav",
+      "git_blob_sha1": "fb00e4690396c361889b09738d97935dba83d1e0",
+      "lfs_oid_sha256": "0111b7c9965cd3abd586085065dce5a6db364ac39c61256e74d3213dd84346e4",
+      "repository_path": "AudioWAV/1052_WSI_SAD_XX.wav",
+      "size_bytes": 102546
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1054_IEO_SAD_MD.wav",
+      "filename": "1054_IEO_SAD_MD.wav",
+      "git_blob_sha1": "7e49acf151bb8a12b97cd36dfd9f285ca5783a16",
+      "lfs_oid_sha256": "2c255e1b5572b864619e309dff527ff69c11c241520a81e4246105aabc83ef0b",
+      "repository_path": "AudioWAV/1054_IEO_SAD_MD.wav",
+      "size_bytes": 86530
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1054_TSI_NEU_XX.wav",
+      "filename": "1054_TSI_NEU_XX.wav",
+      "git_blob_sha1": "c02576a81fba93ee6501f9a9b94aff0330e64a95",
+      "lfs_oid_sha256": "d89ed5751c6d78665ea97fca64a1e48130390ae33381b54c6d16ecc5422ac96f",
+      "repository_path": "AudioWAV/1054_TSI_NEU_XX.wav",
+      "size_bytes": 55566
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1056_IEO_NEU_XX.wav",
+      "filename": "1056_IEO_NEU_XX.wav",
+      "git_blob_sha1": "4886bd8b6eaaf50031ddd0deb4f05fb274b475b3",
+      "lfs_oid_sha256": "2f4d92e6eb56b1edc095b4fa6b57d63eac1bee5303cc013475e29669ce829838",
+      "repository_path": "AudioWAV/1056_IEO_NEU_XX.wav",
+      "size_bytes": 57702
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1056_MTI_ANG_XX.wav",
+      "filename": "1056_MTI_ANG_XX.wav",
+      "git_blob_sha1": "2f9d29f162220eb020f7fa24876b1d43098e54fa",
+      "lfs_oid_sha256": "34ec4892bc972e7d91344f221a1042996822df8f620c5acd890feef1a6c3363f",
+      "repository_path": "AudioWAV/1056_MTI_ANG_XX.wav",
+      "size_bytes": 84394
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1057_IEO_SAD_LO.wav",
+      "filename": "1057_IEO_SAD_LO.wav",
+      "git_blob_sha1": "eda263403ff5ff4bffd25032f489d2e54950a0e3",
+      "lfs_oid_sha256": "9c94e4086d87a1d25f0270d301376c9337f099460e350a2b1630c5b7aacf559f",
+      "repository_path": "AudioWAV/1057_IEO_SAD_LO.wav",
+      "size_bytes": 65176
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1057_IWL_NEU_XX.wav",
+      "filename": "1057_IWL_NEU_XX.wav",
+      "git_blob_sha1": "edb5a6cefcddfdbf94e53a98f19cfb5336802ad6",
+      "lfs_oid_sha256": "e0f5715da8e982fe590bd093af8f50f6dbfc7a1ba3239c2b1c0541249df56825",
+      "repository_path": "AudioWAV/1057_IWL_NEU_XX.wav",
+      "size_bytes": 98276
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1058_MTI_HAP_XX.wav",
+      "filename": "1058_MTI_HAP_XX.wav",
+      "git_blob_sha1": "0bf1e3fb74dfe3f10d0e77afb85f660a5dced171",
+      "lfs_oid_sha256": "ba855b82d843f646a0dfeee6b498581b13ee581b8ee7fd6070117c373cf3e248",
+      "repository_path": "AudioWAV/1058_MTI_HAP_XX.wav",
+      "size_bytes": 87598
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1058_WSI_NEU_XX.wav",
+      "filename": "1058_WSI_NEU_XX.wav",
+      "git_blob_sha1": "e4397e9b3b150dc5c517df4821926abca23366df",
+      "lfs_oid_sha256": "2c3ee3187339a92d53dc61393ed0d99c4c2761af27f8d1ef1675c91791b762ac",
+      "repository_path": "AudioWAV/1058_WSI_NEU_XX.wav",
+      "size_bytes": 91868
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1059_IEO_NEU_XX.wav",
+      "filename": "1059_IEO_NEU_XX.wav",
+      "git_blob_sha1": "048c0cf2dc6b572d57689d65df6d87c2a7dcd11d",
+      "lfs_oid_sha256": "f20ec412c79b8a736b06feda7cc1d1ee50d78f4167c1fcc69efd3224f7680e34",
+      "repository_path": "AudioWAV/1059_IEO_NEU_XX.wav",
+      "size_bytes": 92936
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1059_ITS_SAD_XX.wav",
+      "filename": "1059_ITS_SAD_XX.wav",
+      "git_blob_sha1": "6dfa1c678f2b55517964c33b03d4ad836ca5302e",
+      "lfs_oid_sha256": "2ae85c7f746bc8f2aacca67d4ab33213ebf1dbb3c3bb443890c90a22379a28e3",
+      "repository_path": "AudioWAV/1059_ITS_SAD_XX.wav",
+      "size_bytes": 61972
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1060_IWL_SAD_XX.wav",
+      "filename": "1060_IWL_SAD_XX.wav",
+      "git_blob_sha1": "2b2a9a1c680184611ee4654b5caa749476982fe3",
+      "lfs_oid_sha256": "b609aaeb79292898cfd2805fa30120070643238cac6c7f0628423bdb100fb9ef",
+      "repository_path": "AudioWAV/1060_IWL_SAD_XX.wav",
+      "size_bytes": 73718
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1060_WSI_NEU_XX.wav",
+      "filename": "1060_WSI_NEU_XX.wav",
+      "git_blob_sha1": "4ada6207cd649dbed1f0431f4faf427132ed5d85",
+      "lfs_oid_sha256": "da1352488df0d61a5a0e18f771eda5703f7eda72922c953bcd4ce2e4b4efb5fc",
+      "repository_path": "AudioWAV/1060_WSI_NEU_XX.wav",
+      "size_bytes": 70514
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1063_MTI_SAD_XX.wav",
+      "filename": "1063_MTI_SAD_XX.wav",
+      "git_blob_sha1": "2067de81a4954ff8b902d31b6c5dbc75b4950aee",
+      "lfs_oid_sha256": "6de9b062745d4c8240f0ead63d79468b7dff2cb27393b59751559ebc54a70a20",
+      "repository_path": "AudioWAV/1063_MTI_SAD_XX.wav",
+      "size_bytes": 88666
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1063_WSI_NEU_XX.wav",
+      "filename": "1063_WSI_NEU_XX.wav",
+      "git_blob_sha1": "eeeb356418834a6d5a9e3d82039751afffc424b4",
+      "lfs_oid_sha256": "be0b9245d99e9c52fc18eb9c2cd0b82d7bb508d901d3ed509dd99825d127f75b",
+      "repository_path": "AudioWAV/1063_WSI_NEU_XX.wav",
+      "size_bytes": 74786
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1065_DFA_DIS_XX.wav",
+      "filename": "1065_DFA_DIS_XX.wav",
+      "git_blob_sha1": "3b542e633e11cb860da2565ea0a303336ff9b44c",
+      "lfs_oid_sha256": "d0652ecf53d9ec49aee7bc457f2e6286a01b25baf4661e1d538c6b4f8ae36de2",
+      "repository_path": "AudioWAV/1065_DFA_DIS_XX.wav",
+      "size_bytes": 63040
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1065_IEO_NEU_XX.wav",
+      "filename": "1065_IEO_NEU_XX.wav",
+      "git_blob_sha1": "56e6ce620880982d1f48933a59b710d3f35c9866",
+      "lfs_oid_sha256": "84e17b2a4ddf4aa996144f41a3fffcf7f031c9eba60d48dc32028a63b426594f",
+      "repository_path": "AudioWAV/1065_IEO_NEU_XX.wav",
+      "size_bytes": 54498
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1066_DFA_FEA_XX.wav",
+      "filename": "1066_DFA_FEA_XX.wav",
+      "git_blob_sha1": "de3494b85ca6472cdf3ab2f98b9b2f812a3094ef",
+      "lfs_oid_sha256": "3d76d83acd710ce6dba1e7122760d171e7faa600983ab4f573cd97f6169e9308",
+      "repository_path": "AudioWAV/1066_DFA_FEA_XX.wav",
+      "size_bytes": 83328
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1066_ITH_NEU_XX.wav",
+      "filename": "1066_ITH_NEU_XX.wav",
+      "git_blob_sha1": "f1aab01276a1ce3d77b123c77265bfdc5fb85c22",
+      "lfs_oid_sha256": "be486a634d93b3131910636b2a1d98cd1b04cab3e69412e3b89b92f379a2a029",
+      "repository_path": "AudioWAV/1066_ITH_NEU_XX.wav",
+      "size_bytes": 63040
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1067_DFA_NEU_XX.wav",
+      "filename": "1067_DFA_NEU_XX.wav",
+      "git_blob_sha1": "0c688496a4a57f07e26d29a9b4b41f107170cd4b",
+      "lfs_oid_sha256": "c67889cd60ab338358413b812b6429b1b69611577eaf01779e50d59fb4ed6b94",
+      "repository_path": "AudioWAV/1067_DFA_NEU_XX.wav",
+      "size_bytes": 67312
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1067_IOM_DIS_XX.wav",
+      "filename": "1067_IOM_DIS_XX.wav",
+      "git_blob_sha1": "c1b6c88241ff3cf14804d2fba52c52d10680c1c4",
+      "lfs_oid_sha256": "f8a22a80921d9206c5cb9a04f49e1dfa1394aea421a751408e14979503a30045",
+      "repository_path": "AudioWAV/1067_IOM_DIS_XX.wav",
+      "size_bytes": 152730
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1068_DFA_HAP_XX.wav",
+      "filename": "1068_DFA_HAP_XX.wav",
+      "git_blob_sha1": "0d5435fb28a7d861f0d3abe2ce6d767d2454721e",
+      "lfs_oid_sha256": "88f6cfa3f4fcc05adf3e835c4a13f9598b61a8cad878a66e0abb3a48d8b085ff",
+      "repository_path": "AudioWAV/1068_DFA_HAP_XX.wav",
+      "size_bytes": 81192
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1068_ITS_NEU_XX.wav",
+      "filename": "1068_ITS_NEU_XX.wav",
+      "git_blob_sha1": "3f9635569e0fe369bd4fbd12cf9ea3c9b8385813",
+      "lfs_oid_sha256": "ff5a5fe7923c57a30d0c30d4787128491c547c7de4b45458ec7c034c9bb80d3c",
+      "repository_path": "AudioWAV/1068_ITS_NEU_XX.wav",
+      "size_bytes": 76920
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1069_ITS_HAP_XX.wav",
+      "filename": "1069_ITS_HAP_XX.wav",
+      "git_blob_sha1": "d1c3ce85946c7432e8afe15d310f29e918d71f46",
+      "lfs_oid_sha256": "ad05431512f2b434e84aa94aae18123e857d16ec395dcf8b90e7262243eac577",
+      "repository_path": "AudioWAV/1069_ITS_HAP_XX.wav",
+      "size_bytes": 64108
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1069_MTI_NEU_XX.wav",
+      "filename": "1069_MTI_NEU_XX.wav",
+      "git_blob_sha1": "54450178b84e9a3f662ec55ca2db9d01302ecb43",
+      "lfs_oid_sha256": "81e70b07ddd2661158cdf90b17b8c2888c58ca63d85368e848de9f6a37abb835",
+      "repository_path": "AudioWAV/1069_MTI_NEU_XX.wav",
+      "size_bytes": 84394
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1070_ITS_NEU_XX.wav",
+      "filename": "1070_ITS_NEU_XX.wav",
+      "git_blob_sha1": "6c3e2e6bd458005f83e78f2513af5b1c863d472e",
+      "lfs_oid_sha256": "3437de20a0836eae747efba48c6da3584717f897082115315ec528f669ab6d27",
+      "repository_path": "AudioWAV/1070_ITS_NEU_XX.wav",
+      "size_bytes": 85462
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1070_TIE_SAD_XX.wav",
+      "filename": "1070_TIE_SAD_XX.wav",
+      "git_blob_sha1": "6017bd25292ec2a571afdd5c057c91ba66ddda3a",
+      "lfs_oid_sha256": "7dd61a1ab8d58ce8a7b8991a1b29ad9630ebfe9cc5e09e8d79138313bc338bc6",
+      "repository_path": "AudioWAV/1070_TIE_SAD_XX.wav",
+      "size_bytes": 101478
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1071_IEO_NEU_XX.wav",
+      "filename": "1071_IEO_NEU_XX.wav",
+      "git_blob_sha1": "e57c813433797f522e262449377696a1f2242292",
+      "lfs_oid_sha256": "689e78ac4d2551092c8ad71bb3b882a183799ce5de716e91453311827345e8d7",
+      "repository_path": "AudioWAV/1071_IEO_NEU_XX.wav",
+      "size_bytes": 56634
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1071_MTI_SAD_XX.wav",
+      "filename": "1071_MTI_SAD_XX.wav",
+      "git_blob_sha1": "bfb8ba2075186730a013d156a5244167446ebf0b",
+      "lfs_oid_sha256": "383c34772f6a9221b5f8f434f7dda16c8364f92edf8dcf2801965f92612bf3c0",
+      "repository_path": "AudioWAV/1071_MTI_SAD_XX.wav",
+      "size_bytes": 64108
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1074_IWL_NEU_XX.wav",
+      "filename": "1074_IWL_NEU_XX.wav",
+      "git_blob_sha1": "b1964bb2797dc107994a89ec07a5367c3be92edb",
+      "lfs_oid_sha256": "1261f226d614884e84b6634b0e92251ac86a5df3c4fabfd26ed32e921a2ad215",
+      "repository_path": "AudioWAV/1074_IWL_NEU_XX.wav",
+      "size_bytes": 87598
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1074_MTI_SAD_XX.wav",
+      "filename": "1074_MTI_SAD_XX.wav",
+      "git_blob_sha1": "940ba6c72c489cc7b1c49d8131cec46f443c4fe3",
+      "lfs_oid_sha256": "a5b7aa5772bc31f5001f2194e174c13a24b9c4e56f4645b7af3329531356b87b",
+      "repository_path": "AudioWAV/1074_MTI_SAD_XX.wav",
+      "size_bytes": 95072
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1075_IEO_DIS_MD.wav",
+      "filename": "1075_IEO_DIS_MD.wav",
+      "git_blob_sha1": "b08ec0c0e849a4022ee0d1bedc79986e26243f9c",
+      "lfs_oid_sha256": "4a9f0b9bad6e7bff1e657b7a964c8ac5752e0a26aec423016f93a3bbc7afa9fe",
+      "repository_path": "AudioWAV/1075_IEO_DIS_MD.wav",
+      "size_bytes": 66244
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1075_IWL_NEU_XX.wav",
+      "filename": "1075_IWL_NEU_XX.wav",
+      "git_blob_sha1": "7eff72f1b7b20447c30d5dd65be4bf6052ef97be",
+      "lfs_oid_sha256": "e3fa8db4768510eecfb9e20ae876c6d5b07be40f7956764088bbaf61d9c5b8f9",
+      "repository_path": "AudioWAV/1075_IWL_NEU_XX.wav",
+      "size_bytes": 75854
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1076_TAI_NEU_XX.wav",
+      "filename": "1076_TAI_NEU_XX.wav",
+      "git_blob_sha1": "391fb488949178dff59ea2cc4d3f082af90fc5df",
+      "lfs_oid_sha256": "4957e132a694215ff8940f4caec5454cf46db14e7e23f6917cd63025eea37391",
+      "repository_path": "AudioWAV/1076_TAI_NEU_XX.wav",
+      "size_bytes": 98276
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1076_TIE_FEA_XX.wav",
+      "filename": "1076_TIE_FEA_XX.wav",
+      "git_blob_sha1": "f983b62395436c31787af269861d7a0db626f477",
+      "lfs_oid_sha256": "1b8b04af0cf678fc403d0c342dd68ae6c48b01719fc9a24a6d46e4dbb7bf318d",
+      "repository_path": "AudioWAV/1076_TIE_FEA_XX.wav",
+      "size_bytes": 81192
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1078_ITS_NEU_XX.wav",
+      "filename": "1078_ITS_NEU_XX.wav",
+      "git_blob_sha1": "ec9b4caa2798318482208a712160284e91251b19",
+      "lfs_oid_sha256": "b40d9bced263609d5ff6e1e13372e9b6dceb123c15e02e42c595c6a22ad727b9",
+      "repository_path": "AudioWAV/1078_ITS_NEU_XX.wav",
+      "size_bytes": 67312
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1078_TIE_HAP_XX.wav",
+      "filename": "1078_TIE_HAP_XX.wav",
+      "git_blob_sha1": "a8c8d4cbe00e8fa60aa82e434d7fdf9a62bc26d0",
+      "lfs_oid_sha256": "da6610e3c3e683fdfaab23a028f344f92cbb70686ce1bf988a21d4648954f8e6",
+      "repository_path": "AudioWAV/1078_TIE_HAP_XX.wav",
+      "size_bytes": 84394
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1079_IEO_FEA_LO.wav",
+      "filename": "1079_IEO_FEA_LO.wav",
+      "git_blob_sha1": "a505d85a1c8db2cfe6e405e80e240b51c43401e3",
+      "lfs_oid_sha256": "ea657f797bd40ab1422c85cf623be0d04f31686726944bc42aad4e6476034469",
+      "repository_path": "AudioWAV/1079_IEO_FEA_LO.wav",
+      "size_bytes": 72650
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1079_WSI_NEU_XX.wav",
+      "filename": "1079_WSI_NEU_XX.wav",
+      "git_blob_sha1": "c2f56d811cdb1a0e1cd29a72fe1e0680505a8f4f",
+      "lfs_oid_sha256": "dad73cd4849fbced5eead6db205013e70939b6c54c4c59c565ed53293f2af9a3",
+      "repository_path": "AudioWAV/1079_WSI_NEU_XX.wav",
+      "size_bytes": 88666
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1080_IOM_NEU_XX.wav",
+      "filename": "1080_IOM_NEU_XX.wav",
+      "git_blob_sha1": "7842716d855aac1801a7b7c13a0de04808224921",
+      "lfs_oid_sha256": "12b9420ad4a723618ab204314b4f9a97e58dc1fd27525fdc41aef963d2788660",
+      "repository_path": "AudioWAV/1080_IOM_NEU_XX.wav",
+      "size_bytes": 98276
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1080_ITH_HAP_XX.wav",
+      "filename": "1080_ITH_HAP_XX.wav",
+      "git_blob_sha1": "c409c0824724e4a12e45b37e514c5837be593258",
+      "lfs_oid_sha256": "a5eca8328650cf24d117409cc1927b3dcc50dfcbcfdd1cd96ce23ad80fe3c6d5",
+      "repository_path": "AudioWAV/1080_ITH_HAP_XX.wav",
+      "size_bytes": 81192
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1081_IEO_SAD_LO.wav",
+      "filename": "1081_IEO_SAD_LO.wav",
+      "git_blob_sha1": "1bc862c477c1d82b5fd10fefd5120107ef9b7b13",
+      "lfs_oid_sha256": "a55a9de173b912146987452d4c40f03c31f71d87d33a04f08a1ea33134afb204",
+      "repository_path": "AudioWAV/1081_IEO_SAD_LO.wav",
+      "size_bytes": 72650
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1081_ITH_NEU_XX.wav",
+      "filename": "1081_ITH_NEU_XX.wav",
+      "git_blob_sha1": "5fb3009a0f6c8092435665d458880c388d3c45c8",
+      "lfs_oid_sha256": "408a8ad08f44c2efd6ba978ab2e76a3762b8dfb3de5b10137203a8bc4ced22d0",
+      "repository_path": "AudioWAV/1081_ITH_NEU_XX.wav",
+      "size_bytes": 87598
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1082_IOM_ANG_XX.wav",
+      "filename": "1082_IOM_ANG_XX.wav",
+      "git_blob_sha1": "9c09e049da68122842fbde86e9e2f83ec326cdb5",
+      "lfs_oid_sha256": "6932dc3faf9707741f569ce104419b0959c12344023df00b9f8ce85782d226b0",
+      "repository_path": "AudioWAV/1082_IOM_ANG_XX.wav",
+      "size_bytes": 77988
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1082_ITH_NEU_XX.wav",
+      "filename": "1082_ITH_NEU_XX.wav",
+      "git_blob_sha1": "a56c220611e8c0f44a9da2a5b39637e698252f27",
+      "lfs_oid_sha256": "2129d3fcc510d6bb675acc542dd26f19169e83a5194bc6e5d78347631b164c8a",
+      "repository_path": "AudioWAV/1082_ITH_NEU_XX.wav",
+      "size_bytes": 76920
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1083_DFA_NEU_XX.wav",
+      "filename": "1083_DFA_NEU_XX.wav",
+      "git_blob_sha1": "30ee1734d63125f62901fbdb73e7205272cab6fd",
+      "lfs_oid_sha256": "5492afe427b4cd1c714cfc6f74d293a625f2cb86fc7d080ca0850ebbf5c907fb",
+      "repository_path": "AudioWAV/1083_DFA_NEU_XX.wav",
+      "size_bytes": 65176
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1083_WSI_SAD_XX.wav",
+      "filename": "1083_WSI_SAD_XX.wav",
+      "git_blob_sha1": "aaa8ca0c332a974a714b78baeeae5b8c7290b665",
+      "lfs_oid_sha256": "cd39557f9889411b1a3efa3dc8a92dec148680d8eeb005dddc75df60773d4188",
+      "repository_path": "AudioWAV/1083_WSI_SAD_XX.wav",
+      "size_bytes": 81192
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1084_DFA_NEU_XX.wav",
+      "filename": "1084_DFA_NEU_XX.wav",
+      "git_blob_sha1": "3031a393b677c9c9d12bd27df3b39f72f5caec41",
+      "lfs_oid_sha256": "15490944fc59ac41f6840d600f2cead91c55618422c0627eedbe3e1bd1de010f",
+      "repository_path": "AudioWAV/1084_DFA_NEU_XX.wav",
+      "size_bytes": 61972
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1084_IEO_FEA_MD.wav",
+      "filename": "1084_IEO_FEA_MD.wav",
+      "git_blob_sha1": "64d0abeced025ee3626205b74fd34f4d7d2abd0d",
+      "lfs_oid_sha256": "ad6f69084f92357a816d0ae6617f07cbca856e7663e5288d07016afaa495c812",
+      "repository_path": "AudioWAV/1084_IEO_FEA_MD.wav",
+      "size_bytes": 81192
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1085_IWW_NEU_XX.wav",
+      "filename": "1085_IWW_NEU_XX.wav",
+      "git_blob_sha1": "6178c69f715dbaa834ce694c68846da76dfc5dfb",
+      "lfs_oid_sha256": "5ff1d1ddc90066f4465835e4fd8eeb3000bc55410bfb4d065f58cee8355f8f12",
+      "repository_path": "AudioWAV/1085_IWW_NEU_XX.wav",
+      "size_bytes": 76920
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1085_MTI_NEU_XX.wav",
+      "filename": "1085_MTI_NEU_XX.wav",
+      "git_blob_sha1": "500995521064bf6119e38ba82fd0058a11c2bbe3",
+      "lfs_oid_sha256": "b4d98f8f8a78b85a2e51987d6dbb3a6ad4c3a046269764e60777eb917f454277",
+      "repository_path": "AudioWAV/1085_MTI_NEU_XX.wav",
+      "size_bytes": 70514
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1087_DFA_SAD_XX.wav",
+      "filename": "1087_DFA_SAD_XX.wav",
+      "git_blob_sha1": "4a71e854e9e68a865ddb00dd922b26425bafe40d",
+      "lfs_oid_sha256": "4236059d114e71919ebcadaff836c953ff7547c734f27d228cc3efbaa7b11858",
+      "repository_path": "AudioWAV/1087_DFA_SAD_XX.wav",
+      "size_bytes": 75852
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1087_ITS_NEU_XX.wav",
+      "filename": "1087_ITS_NEU_XX.wav",
+      "git_blob_sha1": "afb98c9e3b6a051f370217352d1c5d967888492b",
+      "lfs_oid_sha256": "9eb7f2867af6d9967c632199ed6380e9512d30bcef70733125b397e12097c46f",
+      "repository_path": "AudioWAV/1087_ITS_NEU_XX.wav",
+      "size_bytes": 70514
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1088_MTI_NEU_XX.wav",
+      "filename": "1088_MTI_NEU_XX.wav",
+      "git_blob_sha1": "f264522782e4161a1e5163b58c2bb34d1cce4e71",
+      "lfs_oid_sha256": "5a4cc584cf116a49c3b94fda16bf36f74da83679a312641f9d8e3f0140e651ca",
+      "repository_path": "AudioWAV/1088_MTI_NEU_XX.wav",
+      "size_bytes": 75852
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1088_TAI_HAP_XX.wav",
+      "filename": "1088_TAI_HAP_XX.wav",
+      "git_blob_sha1": "4b3b8bb03c81511b8c638f8f1244f54e56c6d17f",
+      "lfs_oid_sha256": "7e0cc6133a3f0c986ed727ff252b01b359166f741cf483340283c7032e5eec69",
+      "repository_path": "AudioWAV/1088_TAI_HAP_XX.wav",
+      "size_bytes": 77988
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1090_ITH_NEU_XX.wav",
+      "filename": "1090_ITH_NEU_XX.wav",
+      "git_blob_sha1": "c2e5619868bbd388dc2f1aa41338ab70e22726cc",
+      "lfs_oid_sha256": "31a27ce3ce46c8da595ee845d2044f70aa05aa15fd3892ead83a0a1908d6643c",
+      "repository_path": "AudioWAV/1090_ITH_NEU_XX.wav",
+      "size_bytes": 73718
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1090_MTI_SAD_XX.wav",
+      "filename": "1090_MTI_SAD_XX.wav",
+      "git_blob_sha1": "11bf020634cf4c5b5e339439d4440930b9a82107",
+      "lfs_oid_sha256": "fba9800545b9d11a39ce0f2667344103bb2442c0605e4d57026006d6c90f5fae",
+      "repository_path": "AudioWAV/1090_MTI_SAD_XX.wav",
+      "size_bytes": 87598
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1091_IEO_NEU_XX.wav",
+      "filename": "1091_IEO_NEU_XX.wav",
+      "git_blob_sha1": "208da3e5017a54ad943c635d8f2ec7f6fc2f5c4f",
+      "lfs_oid_sha256": "2390384fc45992c2677cab77fb7dece5fb9a6cfeca54b5e971b9bb6b31fa9288",
+      "repository_path": "AudioWAV/1091_IEO_NEU_XX.wav",
+      "size_bytes": 58770
+    },
+    {
+      "download_url": "https://media.githubusercontent.com/media/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/AudioWAV/1091_MTI_HAP_XX.wav",
+      "filename": "1091_MTI_HAP_XX.wav",
+      "git_blob_sha1": "286cf6547e127c8ffab6b400bfe346ce573c690b",
+      "lfs_oid_sha256": "716319ed7c90280fc4f765444a0c8105b31a683b52e881dba2d89c91fea1f447",
+      "repository_path": "AudioWAV/1091_MTI_HAP_XX.wav",
+      "size_bytes": 90802
+    }
+  ],
+  "schema_version": "claim4_cremad_lfs_assets_v1",
+  "source": {
+    "repository": "CheyneyComputerScience/CREMA-D",
+    "revision": "1658cd342dff90010aa843eaeebd53610a08b1dc"
+  }
+}

@@ -23,7 +23,10 @@ contains, where applicable:
 - resolved configuration and SHA-256 manifests;
 - requested, generated, and evaluated sample counts;
 - per-sample metrics and aggregate bootstrap intervals;
-- generated audio whose source licenses permit redistribution;
+- public derived reports, hashes, and validated figures only; generated audio
+  is excluded from this dataset regardless of source licensing;
+- raw embeddings, activations, tensors, and model state are excluded; Claim 5
+  publishes only a count-and-hash manifest for its local reference bank;
 - a `COMPLETE.json` marker written only after every required artifact uploads.
 
 The reproduction code is available at
@@ -34,9 +37,9 @@ The original implementation is pinned at
 ## Licensing
 
 The reproduction harness is MIT licensed. Source recordings and generated audio
-retain the restrictions of their source datasets and model licenses. Each run
-must record those licenses in provenance; files without clear redistribution
-permission are represented only by hashes and aggregate results, not uploaded.
+retain the restrictions of their source datasets and model licenses. They are
+not uploaded here; runs represent them only through public-safe hashes and
+aggregate results.
 
 ## Integrity
 

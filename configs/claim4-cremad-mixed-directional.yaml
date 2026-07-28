@@ -12,8 +12,8 @@ claim4:
     revision: 1658cd342dff90010aa843eaeebd53610a08b1dc
     votes_url: https://raw.githubusercontent.com/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/processedResults/tabulatedVotes.csv
     votes_sha256: 774d9d759cb5caf2542758a39eca8c0f1d2777f9987ff5d5adf8066d192f377b
-    content_metadata_url_template: https://api.github.com/repos/CheyneyComputerScience/CREMA-D/contents/AudioWAV/{filename}.wav?ref={revision}
-    git_blob_url_template: https://api.github.com/repos/CheyneyComputerScience/CREMA-D/git/blobs/{git_blob_sha}
+    asset_manifest_path: assets/claim4_cremad_lfs_assets_v1.json
+    asset_manifest_sha256: d8218e0ee4a6b1688996b1384710f8888c5a22f58de3b066357b83c5f1b87f66
     expected_audio_only_rows: 7442
     expected_eligible_rows: 118
     expected_eligible_actors: 60
@@ -57,7 +57,7 @@ claim4:
     required_api: cocoemo.backbones.cosyvoice2.generate_steered_speech
   audio_quality:
     max_clipping_fraction: 0.001
-    sample_rate_hz: 22050
+    sample_rate_hz: 24000
   evaluators:
     emotion2vec:
       id: emotion2vec/emotion2vec_plus_large
@@ -86,6 +86,49 @@ claim4:
     min_rho_vs_dominant: -0.02
     max_wer_increase: 0.02
     min_speaker_similarity_change: -0.02
+  license_attestations:
+    schema_version: claim4_license_attestations_v1
+    public_artifact_policy:
+      source_audio: excluded
+      generated_audio: excluded
+      model_weights: excluded
+      public_evidence: derived_metrics_and_hashes_only
+      generated_audio_redistribution: not_relied_on
+    components:
+      cremad_source:
+        pinned_identifier: https://github.com/CheyneyComputerScience/CREMA-D/tree/1658cd342dff90010aa843eaeebd53610a08b1dc
+        license_identifier: https://github.com/CheyneyComputerScience/CREMA-D/blob/1658cd342dff90010aa843eaeebd53610a08b1dc/LICENSE.txt
+        license_expression: ODbL-1.0 database; DbCL-1.0 contents
+        acknowledged: true
+        redistribution: not_redistributed_by_this_reproduction
+      cosyvoice2_model:
+        pinned_identifier: https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/tree/eec1ae6c79877dbd9379285cf8789c9e0879293d
+        license_identifier: https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/tree/eec1ae6c79877dbd9379285cf8789c9e0879293d
+        license_expression: Apache-2.0
+        acknowledged: true
+        redistribution: not_redistributed_by_this_reproduction
+      emotion2vec:
+        pinned_identifier: https://huggingface.co/emotion2vec/emotion2vec_plus_large/tree/6c303ba987b86b93193de93e34bb2b077a6bedc4
+        license_identifier: https://huggingface.co/emotion2vec/emotion2vec_plus_large/blob/6c303ba987b86b93193de93e34bb2b077a6bedc4/README.md
+        license_expression: model-license
+        acknowledged: true
+        redistribution: not_redistributed_by_this_reproduction
+      wavlm:
+        pinned_identifier: https://huggingface.co/microsoft/wavlm-base-sv/tree/0a23162ffc49adcf42bdf836a00cb2eb45af3601
+        license_identifier: https://huggingface.co/microsoft/wavlm-base-sv/blob/0a23162ffc49adcf42bdf836a00cb2eb45af3601/README.md#license
+        license_expression: official_license_linked_by_pinned_model_card
+        acknowledged: true
+        redistribution: not_redistributed_by_this_reproduction
+      whisper:
+        pinned_identifier: https://huggingface.co/openai/whisper-large-v3/tree/06f233fe06e710322aca913c1bc4249a0d71fce1
+        license_identifier: https://huggingface.co/openai/whisper-large-v3/tree/06f233fe06e710322aca913c1bc4249a0d71fce1
+        license_expression: Apache-2.0
+        acknowledged: true
+        redistribution: not_redistributed_by_this_reproduction
+  canary_prerequisite:
+    receipt_path: receipts/claim4-runtime-canary.json
+    canary_config_path: configs/claim4-cremad-mixed-canary.yaml
+    required_status: complete
 
 evidence:
   claim_evidence: true

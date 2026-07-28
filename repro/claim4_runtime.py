@@ -7,12 +7,13 @@ any claim verdict is interpreted as empirical evidence.
 
 from __future__ import annotations
 
-import base64
 import hashlib
 import json
 import math
 import os
 import random
+import re
+import subprocess
 import tempfile
 import time
 from dataclasses import dataclass, replace
@@ -24,16 +25,20 @@ import numpy as np
 from repro.claim4_evaluation import build_claim4_arms
 from repro.claim4_protocol import (
     CLAIM4_ARM_NAMES,
+    FrozenClaim4Asset,
     LfsPointer,
     build_claim4_manifest,
+    claim4_asset_for_filename,
     ensure_lfs_wav,
     fetch_url_bytes,
-    parse_lfs_pointer,
+    load_frozen_claim4_asset_manifest,
+    require_claim4_asset_coverage,
     write_manifest,
 )
 from repro.config import ReproConfig, load_config
 from repro.contracts import ContractError, require_complete_counts, sha256_file
 from repro.cremad_selection import load_audio_vote_rows
+from repro.hub_artifacts import ARTIFACT_SCHEMA_VERSION, artifact_destination
 from repro.claim4_protocol import cremad_actor_id, is_claim4_eligible
 
 
@@ -68,6 +73,8 @@ class Claim4Settings:
     audio_quality: dict[str, Any]
     evaluators: dict[str, Any]
     decisions: dict[str, Any]
+    license_attestations: dict[str, Any]
+    canary_prerequisite: dict[str, Any]
 
 
 def _mapping(value: object, label: str) -> dict[str, Any]:
@@ -94,6 +101,30 @@ def _require_finite_number(value: object, label: str) -> float:
     return float(value)
 
 
+_CLAIM4_LICENSE_COMPONENTS = (
+    "cremad_source", "cosyvoice2_model", "emotion2vec", "wavlm", "whisper",
+)
+
+
+def _safe_relative_path(value: object, *, label: str, suffix: str | None = None) -> Path:
+    if not isinstance(value, str) or not value:
+        raise ContractError(f"{label} must be a non-empty relative path")
+    path = Path(value)
+    if path.is_absolute() or ".." in path.parts or path.name in {"", ".", ".."}:
+        raise ContractError(f"{label} must be a safe relative path")
+    if suffix is not None and path.suffix != suffix:
+        raise ContractError(f"{label} must end in {suffix}")
+    return path
+
+
+def _require_https_url(value: object, *, label: str, suffix: str | None = None) -> str:
+    if not isinstance(value, str) or not re.fullmatch(r"https://[^\s?#]+(?:[?#][^\s]*)?", value):
+        raise ContractError(f"{label} must be an https URL")
+    if suffix is not None and not value.split("?", 1)[0].split("#", 1)[0].endswith(suffix):
+        raise ContractError(f"{label} must end in {suffix}")
+    return value
+
+
 def parse_claim4_settings(config: ReproConfig) -> Claim4Settings:
     canary = config.raw.get("claim4_canary")
     if canary is not None:
@@ -105,6 +136,7 @@ def parse_claim4_settings(config: ReproConfig) -> Claim4Settings:
         keys={
             "protocol", "mode", "source", "selection", "arms", "expected_samples", "expected_rendered_wavs",
             "alpha", "vector_contract", "model", "audio_quality", "evaluators", "decisions",
+            "license_attestations", "canary_prerequisite",
         },
     )
     if values["protocol"] != "cremad_mixed_directional_public_proxy_v1":
@@ -117,14 +149,17 @@ def parse_claim4_settings(config: ReproConfig) -> Claim4Settings:
         source,
         label="claim4.source",
         keys={
-            "revision", "votes_url", "votes_sha256", "content_metadata_url_template", "git_blob_url_template",
+            "revision", "votes_url", "votes_sha256", "asset_manifest_path", "asset_manifest_sha256",
             "expected_audio_only_rows", "expected_eligible_rows", "expected_eligible_actors",
         },
     )
     if not all(isinstance(source[key], str) and source[key] for key in (
-        "revision", "votes_url", "votes_sha256", "content_metadata_url_template", "git_blob_url_template"
-    )) or len(source["votes_sha256"]) != 64:
-        raise ContractError("claim4.source must pin non-empty revision/URLs and a SHA-256 vote-table hash")
+        "revision", "votes_url", "votes_sha256", "asset_manifest_path", "asset_manifest_sha256"
+    )) or len(source["votes_sha256"]) != 64 or len(source["asset_manifest_sha256"]) != 64:
+        raise ContractError("claim4.source must pin the vote table and frozen asset manifest SHA-256 hashes")
+    _safe_relative_path(
+        source["asset_manifest_path"], label="claim4.source.asset_manifest_path", suffix=".json"
+    )
     for key in ("expected_audio_only_rows", "expected_eligible_rows", "expected_eligible_actors"):
         _require_positive_int(source[key], f"claim4.source.{key}")
 
@@ -174,7 +209,7 @@ def parse_claim4_settings(config: ReproConfig) -> Claim4Settings:
     audio_quality = _mapping(values["audio_quality"], "claim4.audio_quality")
     _require_exact_keys(audio_quality, label="claim4.audio_quality", keys={"max_clipping_fraction", "sample_rate_hz"})
     clipping = _require_finite_number(audio_quality["max_clipping_fraction"], "claim4.audio_quality.max_clipping_fraction")
-    if not 0.0 <= clipping < 1.0 or audio_quality["sample_rate_hz"] != 22050:
+    if not 0.0 <= clipping < 1.0 or audio_quality["sample_rate_hz"] != 24000:
         raise ContractError("Claim 4 audio integrity contract changed")
 
     evaluators = _mapping(values["evaluators"], "claim4.evaluators")
@@ -206,10 +241,86 @@ def parse_claim4_settings(config: ReproConfig) -> Claim4Settings:
     ):
         raise ContractError("Claim 4 decision thresholds changed")
 
+    license_attestations = _mapping(values["license_attestations"], "claim4.license_attestations")
+    _require_exact_keys(
+        license_attestations,
+        label="claim4.license_attestations",
+        keys={"schema_version", "public_artifact_policy", "components"},
+    )
+    if license_attestations["schema_version"] != "claim4_license_attestations_v1":
+        raise ContractError("Claim 4 license-attestation schema changed")
+    public_artifact_policy = _mapping(
+        license_attestations["public_artifact_policy"], "claim4.license_attestations.public_artifact_policy"
+    )
+    if public_artifact_policy != {
+        "source_audio": "excluded",
+        "generated_audio": "excluded",
+        "model_weights": "excluded",
+        "public_evidence": "derived_metrics_and_hashes_only",
+        "generated_audio_redistribution": "not_relied_on",
+    }:
+        raise ContractError("Claim 4 public artifact and redistribution policy changed")
+    components = _mapping(license_attestations["components"], "claim4.license_attestations.components")
+    if tuple(components) != _CLAIM4_LICENSE_COMPONENTS:
+        raise ContractError("Claim 4 license attestations must cover each frozen component in order")
+    expected_components = {
+        "cremad_source": {
+            "pinned_identifier": f"https://github.com/CheyneyComputerScience/CREMA-D/tree/{source['revision']}",
+            "license_identifier": f"https://github.com/CheyneyComputerScience/CREMA-D/blob/{source['revision']}/LICENSE.txt",
+            "license_expression": "ODbL-1.0 database; DbCL-1.0 contents",
+            "acknowledged": True,
+            "redistribution": "not_redistributed_by_this_reproduction",
+        },
+        "cosyvoice2_model": {
+            "pinned_identifier": f"https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/tree/{model['revision']}",
+            "license_identifier": f"https://huggingface.co/FunAudioLLM/CosyVoice2-0.5B/tree/{model['revision']}",
+            "license_expression": "Apache-2.0",
+            "acknowledged": True,
+            "redistribution": "not_redistributed_by_this_reproduction",
+        },
+        "emotion2vec": {
+            "pinned_identifier": f"https://huggingface.co/emotion2vec/emotion2vec_plus_large/tree/{emotion2vec['revision']}",
+            "license_identifier": f"https://huggingface.co/emotion2vec/emotion2vec_plus_large/blob/{emotion2vec['revision']}/README.md",
+            "license_expression": "model-license",
+            "acknowledged": True,
+            "redistribution": "not_redistributed_by_this_reproduction",
+        },
+        "wavlm": {
+            "pinned_identifier": f"https://huggingface.co/microsoft/wavlm-base-sv/tree/{wavlm['revision']}",
+            "license_identifier": f"https://huggingface.co/microsoft/wavlm-base-sv/blob/{wavlm['revision']}/README.md#license",
+            "license_expression": "official_license_linked_by_pinned_model_card",
+            "acknowledged": True,
+            "redistribution": "not_redistributed_by_this_reproduction",
+        },
+        "whisper": {
+            "pinned_identifier": f"https://huggingface.co/openai/whisper-large-v3/tree/{whisper['revision']}",
+            "license_identifier": f"https://huggingface.co/openai/whisper-large-v3/tree/{whisper['revision']}",
+            "license_expression": "Apache-2.0",
+            "acknowledged": True,
+            "redistribution": "not_redistributed_by_this_reproduction",
+        },
+    }
+    if components != expected_components:
+        raise ContractError("Claim 4 frozen license identifiers or redistribution attestations changed")
+
+    canary_prerequisite = _mapping(values["canary_prerequisite"], "claim4.canary_prerequisite")
+    _require_exact_keys(
+        canary_prerequisite,
+        label="claim4.canary_prerequisite",
+        keys={"receipt_path", "canary_config_path", "required_status"},
+    )
+    _safe_relative_path(canary_prerequisite["receipt_path"], label="claim4.canary_prerequisite.receipt_path", suffix=".json")
+    _safe_relative_path(canary_prerequisite["canary_config_path"], label="claim4.canary_prerequisite.canary_config_path", suffix=".yaml")
+    if canary_prerequisite["required_status"] != "complete":
+        raise ContractError("Claim 4 full run must require a completed canary receipt")
+
     evidence = _mapping(config.raw.get("evidence"), "evidence")
     if evidence.get("claim_evidence") is not (mode == "full"):
         raise ContractError("Claim 4 evidence flag must match its execution mode")
-    return Claim4Settings(mode, source, actor_count, alpha, expected_samples, expected_wavs, vector_contract, model, audio_quality, evaluators, decisions)
+    return Claim4Settings(
+        mode, source, actor_count, alpha, expected_samples, expected_wavs, vector_contract, model,
+        audio_quality, evaluators, decisions, license_attestations, canary_prerequisite,
+    )
 
 
 def _parse_claim4_canary_settings(config: ReproConfig, value: object) -> Claim4Settings:
@@ -239,6 +350,209 @@ def _parse_claim4_canary_settings(config: ReproConfig, value: object) -> Claim4S
     return replace(base, mode="canary", expected_samples=samples, expected_rendered_wavs=wavs)
 
 
+def _validate_claim4_canary_receipt_payload(
+    *, receipt_bytes: bytes, full_config_sha256: str, canary_config_sha256: str,
+    canary_config_digest: str, required_status: str
+) -> dict[str, Any]:
+    """Validate the terminal receipt independently from its Git commitment."""
+
+    try:
+        receipt = json.loads(receipt_bytes.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ContractError("Claim 4 canary receipt is not valid JSON") from exc
+    if not isinstance(receipt, dict) or set(receipt) != {
+        "schema_version", "status", "full_config_sha256", "canary_config_sha256", "canary_config_digest",
+        "canary_repository_commit", "canary_run_name", "terminal_job_url",
+        "remote_hub_commit_oid", "remote_complete_url", "remote_complete_sha256",
+    }:
+        raise ContractError("Claim 4 canary receipt schema changed")
+    if receipt["schema_version"] != "claim4_runtime_canary_receipt_v2":
+        raise ContractError("Claim 4 canary receipt schema version changed")
+    if receipt["full_config_sha256"] != full_config_sha256:
+        raise ContractError("Claim 4 canary receipt does not bind the current full configuration")
+    if receipt["canary_config_sha256"] != canary_config_sha256:
+        raise ContractError("Claim 4 canary receipt does not bind the current canary configuration")
+    if receipt["canary_config_digest"] != canary_config_digest:
+        raise ContractError("Claim 4 canary receipt does not bind the current canonical canary configuration digest")
+    if receipt["status"] != required_status:
+        raise ContractError("Claim 4 full run is blocked until the GPU canary receipt is complete")
+    if not isinstance(receipt["canary_repository_commit"], str) or re.fullmatch(
+        r"[0-9a-f]{7,64}", receipt["canary_repository_commit"]
+    ) is None:
+        raise ContractError("Claim 4 canary receipt must pin its repository commit")
+    if not isinstance(receipt["canary_config_digest"], str) or re.fullmatch(
+        r"[0-9a-f]{64}", receipt["canary_config_digest"]
+    ) is None:
+        raise ContractError("Claim 4 canary receipt must pin its canonical config digest")
+    if not isinstance(receipt["canary_run_name"], str) or not receipt["canary_run_name"]:
+        raise ContractError("Claim 4 canary receipt must pin its run name")
+    if not isinstance(receipt["remote_hub_commit_oid"], str) or re.fullmatch(
+        r"[0-9a-f]{7,64}", receipt["remote_hub_commit_oid"]
+    ) is None:
+        raise ContractError("Claim 4 canary receipt must pin its immutable Hub commit oid")
+    _require_https_url(receipt["terminal_job_url"], label="Claim 4 canary terminal_job_url")
+    _require_https_url(
+        receipt["remote_complete_url"], label="Claim 4 canary remote_complete_url", suffix="COMPLETE.json"
+    )
+    if not isinstance(receipt["remote_complete_sha256"], str) or re.fullmatch(
+        r"[0-9a-f]{64}", receipt["remote_complete_sha256"]
+    ) is None:
+        raise ContractError("Claim 4 canary receipt must pin remote COMPLETE.json SHA-256")
+    return receipt
+
+
+def _require_regular_head_file(*, repo: Path, path: Path, label: str) -> tuple[Path, bytes]:
+    """Return a repository-relative, immutable file only when it matches HEAD."""
+
+    repo_root = repo.resolve()
+    try:
+        relative = path.absolute().relative_to(repo_root)
+    except ValueError as exc:
+        raise ContractError(f"{label} must be inside the repository") from exc
+    relative = _safe_relative_path(relative.as_posix(), label=label)
+    checked = repo_root / relative
+    if checked.is_symlink() or not checked.is_file():
+        raise ContractError(f"{label} must be a regular committed file")
+    parent = checked.parent
+    while parent != repo_root:
+        if parent.is_symlink():
+            raise ContractError(f"{label} has a symlinked parent")
+        parent = parent.parent
+    try:
+        tracked = subprocess.run(
+            ["git", "show", f"HEAD:{relative.as_posix()}"],
+            cwd=repo_root,
+            check=True,
+            capture_output=True,
+        ).stdout
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise ContractError(f"{label} must be committed at HEAD") from exc
+    local = checked.read_bytes()
+    if local != tracked:
+        raise ContractError(f"{label} has uncommitted content; refusing mutable evidence")
+    return relative, local
+
+
+def _validate_claim4_remote_complete(*, receipt: Mapping[str, Any]) -> dict[str, Any]:
+    """Fetch and verify the canary's immutable public completion marker."""
+
+    destination = artifact_destination(
+        commit=receipt["canary_repository_commit"],
+        config_digest=receipt["canary_config_digest"],
+        run_name=receipt["canary_run_name"],
+    )
+    immutable_destination = destination.at_revision(receipt["remote_hub_commit_oid"])
+    if receipt["remote_complete_url"] != immutable_destination.complete_url:
+        raise ContractError("Claim 4 canary receipt remote COMPLETE URL is not the required immutable run URL")
+    try:
+        payload = fetch_url_bytes(receipt["remote_complete_url"])
+    except Exception as exc:
+        raise ContractError("could not fetch the Claim 4 canary immutable remote COMPLETE.json") from exc
+    actual_sha256 = hashlib.sha256(payload).hexdigest()
+    if actual_sha256 != receipt["remote_complete_sha256"]:
+        raise ContractError("Claim 4 canary remote COMPLETE.json SHA-256 mismatch")
+    try:
+        complete = json.loads(payload.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ContractError("Claim 4 canary remote COMPLETE.json is not valid JSON") from exc
+    if not isinstance(complete, dict) or set(complete) != {
+        "schema_version", "status", "artifact_manifest_path", "artifact_manifest_sha256",
+        "files_uploaded", "destination", "remote_prefix", "atomic",
+    }:
+        raise ContractError("Claim 4 canary remote COMPLETE.json schema changed")
+    if complete["schema_version"] != ARTIFACT_SCHEMA_VERSION:
+        raise ContractError("Claim 4 canary remote COMPLETE.json schema version changed")
+    if complete["status"] != "complete" or complete["atomic"] is not True:
+        raise ContractError("Claim 4 canary remote COMPLETE.json is not an atomic completed run")
+    if complete["destination"] != destination.as_dict() or complete["remote_prefix"] != destination.remote_prefix:
+        raise ContractError("Claim 4 canary remote COMPLETE.json does not bind the canary run identity")
+    if complete["artifact_manifest_path"] != "hub_artifact_manifest.json":
+        raise ContractError("Claim 4 canary remote COMPLETE.json manifest path changed")
+    if not isinstance(complete["artifact_manifest_sha256"], str) or re.fullmatch(
+        r"[0-9a-f]{64}", complete["artifact_manifest_sha256"]
+    ) is None:
+        raise ContractError("Claim 4 canary remote COMPLETE.json has no valid artifact manifest hash")
+    if not isinstance(complete["files_uploaded"], list) or not all(
+        isinstance(value, str) and value for value in complete["files_uploaded"]
+    ):
+        raise ContractError("Claim 4 canary remote COMPLETE.json file list is malformed")
+    return complete
+
+
+def _load_claim4_frozen_canary_config(*, canary_config_path: Path) -> ReproConfig:
+    """Load the already-HEAD-verified canary configuration for identity checks."""
+
+    try:
+        canary_config = load_config(canary_config_path)
+    except Exception as exc:
+        raise ContractError("Claim 4 frozen canary configuration cannot be loaded") from exc
+    return canary_config
+
+
+def _require_claim4_canary_run_name(*, receipt: Mapping[str, Any], canary_config: ReproConfig) -> None:
+    if receipt["canary_run_name"] != canary_config.run_name:
+        raise ContractError("Claim 4 canary receipt run name does not bind the frozen canary configuration")
+
+
+def _require_claim4_full_canary_receipt(
+    *, config: ReproConfig, settings: Claim4Settings, repo: Path
+) -> dict[str, str]:
+    """Require a committed, terminal canary receipt before full GPU work.
+
+    The receipt is intentionally outside the full-config hash lock: replacing
+    the committed pending template after a terminal canary must not invalidate
+    the canary configuration that produced it.  Instead, the receipt binds the
+    current full and canary config bytes and its own bytes must match ``HEAD``.
+    """
+
+    receipt_relative = _safe_relative_path(
+        settings.canary_prerequisite["receipt_path"],
+        label="claim4.canary_prerequisite.receipt_path", suffix=".json",
+    )
+    canary_relative = _safe_relative_path(
+        settings.canary_prerequisite["canary_config_path"],
+        label="claim4.canary_prerequisite.canary_config_path", suffix=".yaml",
+    )
+    receipt_path = repo / receipt_relative
+    canary_path = repo / canary_relative
+    try:
+        _, full_config_bytes = _require_regular_head_file(
+            repo=repo, path=config.source, label="Claim 4 full configuration"
+        )
+        _, canary_config_bytes = _require_regular_head_file(
+            repo=repo, path=canary_path, label="Claim 4 frozen canary configuration"
+        )
+        _, receipt_bytes = _require_regular_head_file(
+            repo=repo, path=receipt_path, label="Claim 4 canary receipt"
+        )
+        receipt_commit = subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=repo, check=True, capture_output=True, text=True
+        ).stdout.strip()
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise ContractError("Claim 4 full run requires the canary receipt committed at HEAD") from exc
+    canary_config = _load_claim4_frozen_canary_config(canary_config_path=canary_path)
+    receipt = _validate_claim4_canary_receipt_payload(
+        receipt_bytes=receipt_bytes,
+        full_config_sha256=hashlib.sha256(full_config_bytes).hexdigest(),
+        canary_config_sha256=hashlib.sha256(canary_config_bytes).hexdigest(),
+        canary_config_digest=canary_config.digest,
+        required_status=settings.canary_prerequisite["required_status"],
+    )
+    _require_claim4_canary_run_name(receipt=receipt, canary_config=canary_config)
+    _validate_claim4_remote_complete(receipt=receipt)
+    return {
+        "path": receipt_relative.as_posix(),
+        "sha256": hashlib.sha256(receipt_bytes).hexdigest(),
+        "repository_commit": receipt_commit,
+        "terminal_job_url": receipt["terminal_job_url"],
+        "canary_repository_commit": receipt["canary_repository_commit"],
+        "canary_run_name": receipt["canary_run_name"],
+        "remote_hub_commit_oid": receipt["remote_hub_commit_oid"],
+        "remote_complete_url": receipt["remote_complete_url"],
+        "remote_complete_sha256": receipt["remote_complete_sha256"],
+    }
+
+
 def _atomic_verified_download(*, url: str, expected_sha256: str, target: Path) -> Path:
     if target.exists():
         if sha256_file(target) != expected_sha256:
@@ -265,33 +579,56 @@ def _atomic_verified_download(*, url: str, expected_sha256: str, target: Path) -
     return target
 
 
-def _json_url(url: str) -> dict[str, Any]:
-    try:
-        value = json.loads(fetch_url_bytes(url).decode("utf-8"))
-    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
-        raise ContractError(f"expected JSON from GitHub metadata endpoint: {url}") from exc
-    if not isinstance(value, dict):
-        raise ContractError(f"expected JSON object from GitHub metadata endpoint: {url}")
-    return value
+def load_claim4_frozen_assets(
+    settings: Claim4Settings, *, repo: Path, manifest: list[Any]
+) -> dict[str, FrozenClaim4Asset]:
+    """Resolve all selected WAVs from the committed manifest, without REST calls."""
 
-
-def _lfs_pointer_and_download_url(settings: Claim4Settings, filename: str) -> tuple[LfsPointer, str]:
-    metadata_url = settings.source["content_metadata_url_template"].format(
-        filename=filename, revision=settings.source["revision"]
+    assets = load_frozen_claim4_asset_manifest(
+        repo / settings.source["asset_manifest_path"],
+        expected_sha256=settings.source["asset_manifest_sha256"],
+        revision=settings.source["revision"],
     )
-    metadata = _json_url(metadata_url)
-    blob_sha = metadata.get("sha")
-    download_url = metadata.get("download_url")
-    if not isinstance(blob_sha, str) or not blob_sha or not isinstance(download_url, str) or not download_url:
-        raise ContractError(f"GitHub content metadata lacks blob SHA/download URL for {filename}")
-    pointer_json = _json_url(settings.source["git_blob_url_template"].format(git_blob_sha=blob_sha))
-    encoded = pointer_json.get("content")
-    if not isinstance(encoded, str) or pointer_json.get("encoding") != "base64":
-        raise ContractError(f"GitHub blob is not a base64 Git-LFS pointer for {filename}")
-    try:
-        return parse_lfs_pointer(base64.b64decode("".join(encoded.split()), validate=True)), download_url
-    except ValueError as exc:
-        raise ContractError(f"invalid base64 Git-LFS pointer for {filename}") from exc
+    require_claim4_asset_coverage(manifest, assets)
+    return assets
+
+
+def claim4_assets_for_item(
+    assets: Mapping[str, FrozenClaim4Asset], item: Any
+) -> tuple[FrozenClaim4Asset, FrozenClaim4Asset]:
+    """Return the target/reference assets already verified by the frozen manifest."""
+
+    target = claim4_asset_for_filename(assets, item.file_name)
+    reference = claim4_asset_for_filename(assets, item.reference_file_name)
+    if target.filename == reference.filename:
+        raise ContractError("Claim 4 frozen target and reference assets must differ")
+    return target, reference
+
+
+def materialize_claim4_wav_pair(
+    *,
+    cache_root: Path,
+    item: Any,
+    assets: Mapping[str, FrozenClaim4Asset],
+    fetch_content: Any = fetch_url_bytes,
+) -> tuple[Path, Path, FrozenClaim4Asset, FrozenClaim4Asset]:
+    """Cache selected LFS WAVs from immutable media URLs after hash verification."""
+
+    target_asset, reference_asset = claim4_assets_for_item(assets, item)
+    target_wav = ensure_lfs_wav(
+        cache_root=cache_root,
+        item=item,
+        pointer=LfsPointer(target_asset.lfs_oid_sha256, target_asset.size_bytes),
+        fetch_content=lambda: fetch_content(target_asset.download_url),
+    )
+    reference_wav = ensure_lfs_wav(
+        cache_root=cache_root,
+        item=item,
+        filename=item.reference_wav_name,
+        pointer=LfsPointer(reference_asset.lfs_oid_sha256, reference_asset.size_bytes),
+        fetch_content=lambda: fetch_content(reference_asset.download_url),
+    )
+    return target_wav, reference_wav, target_asset, reference_asset
 
 
 def _transcript_for_filename(file_name: str) -> str:
@@ -365,6 +702,24 @@ def _check_generated_wav(path: Path, *, max_clipping_fraction: float, expected_s
         "samples": int(waveform.numel()),
         "clipping_fraction": clipping_fraction,
     }
+
+
+def _require_claim4_model_sample_rate(*, model: Any, expected_sample_rate: int) -> int:
+    """Refuse to synthesize when the pinned model and config disagree."""
+
+    loaded_sample_rate = getattr(model, "sample_rate", None)
+    if (
+        not isinstance(loaded_sample_rate, int)
+        or isinstance(loaded_sample_rate, bool)
+        or loaded_sample_rate < 1
+    ):
+        raise ContractError("Claim 4 loaded CosyVoice model has no valid integer sample_rate")
+    if loaded_sample_rate != expected_sample_rate:
+        raise ContractError(
+            "Claim 4 configured audio sample rate differs from loaded CosyVoice sample rate: "
+            f"configured={expected_sample_rate}, loaded={loaded_sample_rate}"
+        )
+    return loaded_sample_rate
 
 
 def reset_claim4_generation_seed(seed: int) -> None:
@@ -467,6 +822,7 @@ def run_claim4_runtime_canary(config: ReproConfig, *, repo: Path, run_root: Path
     selected = manifest[:1]
     write_manifest(run_root / "claim4_manifest_full.json", manifest)
     write_manifest(run_root / "claim4_canary_manifest.json", selected)
+    assets = load_claim4_frozen_assets(settings, repo=repo, manifest=manifest)
     vectors = load_claim4_vectors(settings, repo=repo)
     from repro.gpu_baseline import _prepare_cosyvoice, _prepare_model
 
@@ -486,23 +842,17 @@ def run_claim4_runtime_canary(config: ReproConfig, *, repo: Path, run_root: Path
     if getattr(cosyvoice2, "generate_steered_speech", None) is None:
         raise ContractError("Claim 4 required CosyVoice2 generation API is unavailable")
     model = cosyvoice2.load_model(str(model_path))
+    _require_claim4_model_sample_rate(
+        model=model, expected_sample_rate=settings.audio_quality["sample_rate_hz"]
+    )
     outputs: list[dict[str, Any]] = []
     output_dir = run_root / "wavs"
     output_dir.mkdir(parents=True, exist_ok=True)
     cache_root = repo / ".cache" / "cremad" / settings.source["revision"] / "AudioWAV"
     started = time.monotonic()
     for item in selected:
-        target_pointer, target_download_url = _lfs_pointer_and_download_url(settings, item.file_name)
-        reference_pointer, reference_download_url = _lfs_pointer_and_download_url(
-            settings, item.reference_file_name
-        )
-        target_wav = ensure_lfs_wav(
-            cache_root=cache_root, item=item, pointer=target_pointer,
-            fetch_content=lambda url=target_download_url: fetch_url_bytes(url),
-        )
-        reference_wav = ensure_lfs_wav(
-            cache_root=cache_root, item=item, filename=item.reference_wav_name, pointer=reference_pointer,
-            fetch_content=lambda url=reference_download_url: fetch_url_bytes(url),
+        target_wav, reference_wav, target_asset, reference_asset = materialize_claim4_wav_pair(
+            cache_root=cache_root, item=item, assets=assets,
         )
         if (
             target_wav == reference_wav
@@ -546,8 +896,10 @@ def run_claim4_runtime_canary(config: ReproConfig, *, repo: Path, run_root: Path
                     np.asarray(arm["vector"], dtype=np.float32).tobytes()
                 ).hexdigest(),
                 "generation_seconds": time.monotonic() - arm_started,
-                "target_lfs_oid_sha256": target_pointer.oid_sha256,
-                "reference_lfs_oid_sha256": reference_pointer.oid_sha256,
+                "target_git_blob_sha1": target_asset.git_blob_sha1,
+                "reference_git_blob_sha1": reference_asset.git_blob_sha1,
+                "target_lfs_oid_sha256": target_asset.lfs_oid_sha256,
+                "reference_lfs_oid_sha256": reference_asset.lfs_oid_sha256,
                 "target_wav": str(target_wav.relative_to(repo)),
                 "reference_wav": str(reference_wav.relative_to(repo)),
                 "target_text": target_text,
@@ -571,6 +923,7 @@ def run_claim4_runtime_canary(config: ReproConfig, *, repo: Path, run_root: Path
         "generated_wavs": len(outputs),
         "integrity_checked_wavs": len(outputs),
         "wav_hash_audit": hash_audit,
+        "license_attestations": settings.license_attestations,
         "elapsed_seconds": time.monotonic() - started,
         "limitations": [
             "This one-actor seven-arm run is a release/API canary, not Claim 4 evidence.",

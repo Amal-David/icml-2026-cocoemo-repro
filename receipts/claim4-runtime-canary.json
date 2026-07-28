@@ -1,0 +1,13 @@
+{
+  "schema_version": "claim4_runtime_canary_receipt_v2",
+  "status": "pending",
+  "full_config_sha256": "f8621332dd6e0bbbd9ba9db3b8eb87870bcd57efdabc99734c6ecf0dd81e654e",
+  "canary_config_sha256": "7544c1d6a463f4c60c6e2233e1f5ed901a146dd83d0a0892be1e9e5d3d7ff4d0",
+  "canary_config_digest": "626fb9d57c452f3a404aa9ddff2b529e274eb0b74582430b2b6aa381674ca320",
+  "canary_repository_commit": null,
+  "canary_run_name": "claim4-cremad-mixed-runtime-canary",
+  "terminal_job_url": null,
+  "remote_hub_commit_oid": null,
+  "remote_complete_url": null,
+  "remote_complete_sha256": null
+}

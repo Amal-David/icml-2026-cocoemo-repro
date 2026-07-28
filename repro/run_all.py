@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
+import datetime as dt
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -13,8 +14,16 @@ if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 
 from repro.config import ReproConfig, load_config
-from repro.contracts import ArtifactLedger, ContractError
-from repro.provenance import collect_provenance
+from repro.contracts import ContractError, sha256_file
+from repro.hub_artifacts import (
+    artifact_destination,
+    persist_run_artifacts,
+    preflight_remote_write_permission,
+    require_hf_token,
+    safe_upload_error,
+    write_public_artifact_manifest,
+)
+from repro.provenance import collect_provenance, require_clean_worktree
 from repro.release_audit import audit_release
 
 
@@ -97,8 +106,95 @@ def render_eval(config: ReproConfig, provenance: dict[str, Any], summary: dict[s
         f"- Verdict: `{summary['verdict']}`\n"
         f"- Repository commit: `{provenance['repository']['commit']}`\n"
         f"- Config digest: `{config.digest}`\n\n"
+        f"- Evidence destination: `{provenance['artifacts']['remote_prefix']}`\n"
+        f"- Completion rule: accept evidence only when one atomic remote commit contains this report, its manifest, and `COMPLETE.json`.\n\n"
         f"## Limitations\n\n{limitations}\n"
     )
+
+
+def _write_local_ready(
+    path: Path, *, config: ReproConfig, provenance: dict[str, Any], artifact_manifest_sha256: str
+) -> None:
+    write_json(
+        path,
+        {
+            "status": "local_ready_for_remote_persistence",
+            "repository_commit": provenance["repository"]["commit"],
+            "config_sha256": config.digest,
+            "run_name": config.run_name,
+            "artifact_manifest_sha256": artifact_manifest_sha256,
+        },
+    )
+
+
+def _load_existing_local_result(
+    *, run_root: Path, config: ReproConfig, provenance: dict[str, Any]
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    ready_path = run_root / "LOCAL_READY.json"
+    summary_path = run_root / "summary.json"
+    provenance_path = run_root / "provenance.json"
+    if not ready_path.is_file() or not summary_path.is_file() or not provenance_path.is_file():
+        raise ContractError(
+            "run root is nonempty without a complete local-ready record; refusing to mix retry state with a new run"
+        )
+    ready = json.loads(ready_path.read_text(encoding="utf-8"))
+    expected = {
+        "repository_commit": provenance["repository"]["commit"],
+        "config_sha256": config.digest,
+        "run_name": config.run_name,
+    }
+    if any(ready.get(key) != value for key, value in expected.items()):
+        raise ContractError("local-ready run identity does not match this immutable config and commit")
+    return (
+        json.loads(summary_path.read_text(encoding="utf-8")),
+        json.loads(provenance_path.read_text(encoding="utf-8")),
+    )
+
+
+def _validate_frozen_artifacts(run_root: Path) -> None:
+    """Reject retry state whose scientific output differs from its ledger."""
+
+    manifest_path = run_root / "artifact_manifest.json"
+    if not manifest_path.is_file():
+        raise ContractError("local-ready run is missing its frozen artifact manifest")
+    try:
+        entries = json.loads(manifest_path.read_text(encoding="utf-8"))["artifacts"]
+    except (json.JSONDecodeError, KeyError, TypeError) as exc:
+        raise ContractError("local-ready artifact manifest is malformed") from exc
+    by_path = {entry.get("path"): entry for entry in entries if isinstance(entry, dict)}
+    required = {"summary.json", "provenance.json", "EVAL.md", "resolved_config.json"}
+    if not required <= set(by_path):
+        raise ContractError("local-ready artifact manifest does not bind all frozen scientific reports")
+    try:
+        ready = json.loads((run_root / "LOCAL_READY.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ContractError("local-ready record is malformed") from exc
+    if ready.get("artifact_manifest_sha256") != sha256_file(manifest_path):
+        raise ContractError("local-ready artifact manifest hash mismatch")
+    for relative, entry in by_path.items():
+        if not isinstance(relative, str) or Path(relative).is_absolute() or ".." in Path(relative).parts:
+            raise ContractError("local-ready artifact manifest contains an unsafe path")
+        path = run_root / relative
+        expected = entry.get("sha256")
+        if not path.is_file() or not isinstance(expected, str) or sha256_file(path) != expected:
+            raise ContractError(f"local-ready artifact hash mismatch: {relative}")
+
+
+def _append_persistence_attempt(run_root: Path, payload: dict[str, Any]) -> None:
+    """Keep mutable remote-attempt telemetry separate from scientific output."""
+
+    path = run_root / "PERSISTENCE_ATTEMPTS.json"
+    if path.exists():
+        try:
+            attempts = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            raise ContractError("persistence diagnostics are malformed") from exc
+        if not isinstance(attempts, list):
+            raise ContractError("persistence diagnostics must be a JSON list")
+    else:
+        attempts = []
+    attempts.append({"at": dt.datetime.now(dt.timezone.utc).isoformat(), **payload})
+    write_json(path, attempts)
 
 
 def main() -> None:
@@ -107,39 +203,114 @@ def main() -> None:
     args = parser.parse_args()
 
     config = load_config(args.config)
+    # Fail before repository/model preparation for evidence stages. A preflight
+    # remains useful without credentials but immediately persists when a Job
+    # supplies its token.
+    token = require_hf_token() if config.stage != "preflight" else os.environ.get("HF_TOKEN")
     provenance = collect_provenance(repo=REPO, config_path=config.source, config_digest=config.digest)
+    destination = artifact_destination(
+        commit=provenance["repository"]["commit"],
+        config_digest=config.digest,
+        run_name=config.run_name,
+    )
+    provenance["artifacts"] = destination.as_dict()
+    # A claim runner can incur GPU cost before it emits its first artifact.  Do
+    # not let it start when it has no way to durably preserve its evidence.
     commit = provenance["repository"]["commit"][:12]
     name = re.sub(r"[^a-z0-9]+", "-", config.run_name.lower()).strip("-")
     run_root = REPO / ".openresearch" / "artifacts" / f"{commit}-{config.digest[:12]}-{name}"
     completed = run_root / "COMPLETE.json"
     if completed.exists():
         raise ContractError(f"completed run is immutable: {run_root}")
-    run_root.mkdir(parents=True, exist_ok=True)
+    ready = run_root / "LOCAL_READY.json"
+    permission_preflight: dict[str, Any] | None = None
+    if config.stage != "preflight":
+        require_clean_worktree(REPO)
+        # Do this before synthesis/evaluation.  A retry has no expensive stage
+        # to protect and instead verifies its frozen local artifacts below.
+        if not ready.exists():
+            permission_preflight = preflight_remote_write_permission(
+                destination=destination, token=token
+            )
+    if ready.exists():
+        summary, persisted_provenance = _load_existing_local_result(
+            run_root=run_root, config=config, provenance=provenance
+        )
+        _validate_frozen_artifacts(run_root)
+        # The result provenance, summary, and EVAL report stay immutable.  A
+        # retry may only append non-scientific persistence diagnostics.
+        provenance = persisted_provenance
+    else:
+        if run_root.exists() and any(run_root.iterdir()):
+            raise ContractError(
+                "run root is nonempty without LOCAL_READY.json; refusing to overwrite an interrupted run"
+            )
+        run_root.mkdir(parents=True, exist_ok=True)
+        summary = run_stage(config, run_root=run_root)
+        write_json(run_root / "resolved_config.json", config.raw)
 
-    summary = run_stage(config, run_root=run_root)
-    write_json(run_root / "resolved_config.json", config.raw)
-    write_json(run_root / "provenance.json", provenance)
-    write_json(run_root / "summary.json", summary)
-    eval_text = render_eval(config, provenance, summary)
-    (run_root / "EVAL.md").write_text(eval_text, encoding="utf-8")
-    (REPO / "EVAL.md").write_text(eval_text, encoding="utf-8")
+    if not ready.exists():
+        summary["artifact_persistence"] = {
+            "status": "pending_atomic_hub_commit" if token else "local_ready_pending_hf_token",
+            "destination": destination.as_dict(),
+            "acceptance": "This summary remains pending until one atomic Hub commit contains its manifest and COMPLETE.json.",
+        }
+        provenance["artifacts"] = destination.as_dict()
+        write_json(run_root / "provenance.json", provenance)
+        write_json(run_root / "summary.json", summary)
+        eval_text = render_eval(config, provenance, summary)
+        (run_root / "EVAL.md").write_text(eval_text, encoding="utf-8")
+        (REPO / "EVAL.md").write_text(eval_text, encoding="utf-8")
+    else:
+        eval_text = (run_root / "EVAL.md").read_text(encoding="utf-8")
 
-    ledger = ArtifactLedger(run_root)
-    kinds = {
-        ".json": "data",
-        ".jsonl": "per_sample",
-        ".md": "report",
-        ".wav": "audio",
-    }
-    for path in sorted(run_root.rglob("*")):
-        if path.is_file() and path.name not in {"artifact_manifest.json", "COMPLETE.json"}:
-            ledger.add(path, kind=kinds.get(path.suffix, "artifact"))
-    manifest_path = ledger.write()
+    if not ready.exists():
+        manifest_path = write_public_artifact_manifest(run_root)
+        # This is intentionally the final local write before any remote call:
+        # it certifies a complete, hash-accounted local evidence set for retry.
+        _write_local_ready(
+            ready,
+            config=config,
+            provenance=provenance,
+            artifact_manifest_sha256=sha256_file(manifest_path),
+        )
+
+    if permission_preflight is not None:
+        _append_persistence_attempt(run_root, {"kind": "write_permission_preflight", **permission_preflight})
+
+    if token is None:
+        print(eval_text)
+        return
+
+    try:
+        remote_result = persist_run_artifacts(
+            run_root=run_root, destination=destination, token=token
+        )
+    except Exception as exc:
+        # Keep the local ready marker for a clean fresh-job retry, but never
+        # mutate the frozen scientific reports or manufacture completion.
+        _append_persistence_attempt(
+            run_root,
+            {"kind": "atomic_upload", "status": "failed", "error": safe_upload_error(exc)},
+        )
+        raise
+
     write_json(
         completed,
         {
             "status": "complete",
-            "artifact_manifest_sha256": hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
+            "hub_artifact_manifest_sha256": remote_result["artifact_manifest_sha256"],
+            "remote": remote_result,
+        },
+    )
+    _append_persistence_attempt(
+        run_root,
+        {
+            "kind": "atomic_upload",
+            "status": "succeeded",
+            "hub_commit_oid": remote_result["hub_commit_oid"],
+            "hub_commit_url": remote_result["hub_commit_url"],
+            "immutable_destination": remote_result["immutable_destination"],
         },
     )
     print(eval_text)

@@ -11,7 +11,7 @@ No empirical verdict is reported yet. The reproduction protocols and structural 
 
 |  | This reproduction | Full replication |
 | --- | --- | --- |
-| Scope | Frozen public RAVDESS Claims 1-3 proxies; public CREMA-D Claim 4 proxy; release audits | Paper datasets, both TTS backbones, every reported table, and original human evaluation |
+| Scope | Frozen public RAVDESS Claims 1-3 and Claim 5 proxies; public CREMA-D Claim 4 proxy; release audits | Paper datasets, both TTS backbones, every reported table, and original human evaluation |
 | Hardware | Pending target-GPU canaries | Not fully disclosed by the paper |
 | Compute time | Pending terminal Jobs | Not reproducible from released materials |
 | Cost | Pending; estimated from terminal wall time x published flavor rate | Unknown |
