@@ -34,3 +34,10 @@ def test_release_audit_exposes_cosyvoice_operator_deviation() -> None:
     assert report["cosyvoice_injection"]["released_active_operator"] == "translation_op_"
     assert not report["cosyvoice_injection"]["matches_paper"]
     assert "cosyvoice_injection_operator_deviation" in report["defects"]
+
+
+def test_release_audit_exposes_claim4_neutral_weight_omission() -> None:
+    report = audit_release(REPO)
+
+    assert report["claim4_neutral_mixing"]["probe"]["retained_non_neutral_mass"] == 0.6
+    assert "claim4_neutral_weight_omitted" in report["defects"]

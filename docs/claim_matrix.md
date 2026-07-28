@@ -30,6 +30,8 @@ Paper anchor: Sections 3.3 and 4.2, Table 2, and Appendix D.2. CREMA-D contribut
 
 The challenge prompt's composite tuple is not a single Table 2 result. On CREMA-D, TEP `0.335` and Spearman rho `0.319` belong to `CoCoEmo (Ins1, alpha=5)`, whose N-MOS is `3.00`; N-MOS `3.96` belongs to bare `CoCoEmo (alpha=5)`, while `4.25` belongs to bare `CoCoEmo (alpha=3)`. This documentary inconsistency is a falsification finding; empirical results must be compared row by row.
 
+Release-conformance finding: the released mixed-synthesis script defines only `angry`, `happy`, `sad`, and `surprise`; it never reads `p_neutral` and ships no neutral steering vector. Therefore, when a five-way target contains neutral mass, the released helper composes the unrenormalized non-neutral sum. This is exactly equivalent to treating the missing neutral direction as a zero vector, and attenuates the mixed direction by `1 - p_neutral` relative to a non-neutral-renormalized counterfactual. The deterministic source-and-vector audit is [`repro/claim4_mixing_audit.py`](../repro/claim4_mixing_audit.py); its generated evidence is [`claim4_mixing_audit.json`](evidence/claim4_mixing_audit.json).
+
 Required evidence: every named Table 2 condition, mixed-label controls, paper-faithful and independent frozen evaluators, paired intervals, and actual blinded human ratings for naturalness. IEMOCAP results are blocked without licensed access.
 
 ## Claim 5: high text-emotion mismatch

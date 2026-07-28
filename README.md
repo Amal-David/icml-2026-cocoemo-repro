@@ -10,7 +10,7 @@
 ## Reproduction workspace
 
 - Claim definitions and preregistered tests: [`docs/claim_matrix.md`](docs/claim_matrix.md)
-- Fixed runner: `uv run python repro/run_all.py --config configs/active.yaml`
+- Fixed runner: `uv run --extra cosyvoice2 python repro/run_all.py --config configs/active.yaml`
 - Pinned CosyVoice2 GPU baseline: [`configs/baseline-cosyvoice2.yaml`](configs/baseline-cosyvoice2.yaml)
 - Blinded human-study preregistration: [`study/PREREGISTRATION.md`](study/PREREGISTRATION.md)
 - Durable artifacts: [Hugging Face dataset](https://huggingface.co/datasets/amal-david/cocoemo-repro-artifacts)

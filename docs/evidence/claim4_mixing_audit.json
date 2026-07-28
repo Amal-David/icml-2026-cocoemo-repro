@@ -1,0 +1,55 @@
+{
+  "audit": "claim4_neutral_weight_mixing_v1",
+  "claim_evidence": false,
+  "limitations": [
+    "This is a CPU release-conformance audit, not a mixed-emotion TTS quality result.",
+    "The fixed probe demonstrates algebraic semantics; empirical effect size requires generated speech and frozen evaluators."
+  ],
+  "probe": {
+    "backbone": "cosyvoice2",
+    "distribution": {
+      "p_angry": 0.35,
+      "p_happy": 0.15,
+      "p_neutral": 0.4,
+      "p_sad": 0.1,
+      "p_surprise": 0.0
+    },
+    "explicit_zero_neutral_semantics": "identical_to_released",
+    "layer": 17,
+    "loaded_emotions": [
+      "angry",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "missing_positive_weight_emotions": [
+      "neutral"
+    ],
+    "operation": "attn_output",
+    "released_semantics": "unrenormalized_non_neutral",
+    "released_to_renormalized_norm_ratio": 0.6000000253350947,
+    "released_vs_explicit_zero_max_abs_diff": 0.0,
+    "released_vs_renormalized_l2": 0.3764241635799408,
+    "renormalized_non_neutral_semantics": "counterfactual",
+    "retained_non_neutral_mass": 0.6,
+    "vector_sha256": {
+      "angry": "16f6b6a20b7edad9285c7bf39ab69fedad1952218a796a027668e8d8962fe18b",
+      "happy": "24218782213c46197af3c6cf14f941d2f84585e98ace1fa77fc05a96005eb68b",
+      "sad": "215ce83da8ccbeb18d065d6bf995a5a2b5f253fdaac879c886d913a9009c0831",
+      "surprise": "8a8535ea3b8f60d4f7eab31eb842aeab83656c618d613fd704832324e690544a"
+    }
+  },
+  "source": {
+    "p_neutral_direct_references": [],
+    "p_neutral_read_by_synthesis_script": false,
+    "script_emotions": [
+      "angry",
+      "happy",
+      "sad",
+      "surprise"
+    ],
+    "synthesis_script": "scripts/synthesize.py",
+    "synthesis_script_sha256": "3cc21af8c6c973d18c438a6ff1983a682bd87f679dccd95d1fcef4f4c4ec716e"
+  },
+  "verdict": "released_mixing_omits_neutral_mass_from_vector_composition"
+}

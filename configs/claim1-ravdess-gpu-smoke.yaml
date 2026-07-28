@@ -1,0 +1,28 @@
+run:
+  name: claim1-ravdess-causal-smoke
+  seed: 20260728
+  stage: claim1
+
+claims: [1]
+
+claim1:
+  source_url: https://github.com/FunAudioLLM/CosyVoice.git
+  source_revision: 074ca6dc9e80a2f424f1f74b48bdd7d3fea531cc
+  model_id: FunAudioLLM/CosyVoice2-0.5B
+  model_revision: eec1ae6c79877dbd9379285cf8789c9e0879293d
+  ravdess:
+    source_url: https://zenodo.org/records/1188976
+    release: RAVDESS-v1.0-audio-speech
+    root: .cache/ravdess/Audio_Speech_Actors_01-24
+    expected_total_groups: 96
+  max_groups: 1
+  selected_group_ids: [actor_01_statement_01_repetition_01]
+  target_emotions: [angry]
+  conditions: [slm_driven, flow_driven, emotional_both]
+  llm_embedding_mode: neutral
+
+evidence:
+  claim_evidence: false
+  purpose: >-
+    GPU smoke for Claim 1 causal replacement. It requires a complete public RAVDESS
+    checkout, but synthesizes only one predeclared independent group.

@@ -54,6 +54,10 @@ def run_stage(config: ReproConfig, *, run_root: Path) -> dict[str, Any]:
         from repro.gpu_baseline import run_gpu_baseline
 
         return run_gpu_baseline(config, repo=REPO, run_root=run_root)
+    if config.stage == "claim1":
+        from repro.claim1_gpu import run_claim1_gpu
+
+        return run_claim1_gpu(config, repo=REPO, run_root=run_root)
     if config.stage == "claim4" and "claim4_metadata" in config.raw:
         from repro.claim4_metadata import run_claim4_metadata
 

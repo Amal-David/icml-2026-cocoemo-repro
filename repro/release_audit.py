@@ -7,6 +7,7 @@ from typing import Any
 import torch
 
 from repro.contracts import sha256_file
+from repro.claim4_mixing_audit import audit_released_cosyvoice_neutral_mixing
 
 
 EXPECTED_VECTOR_DIMS = {"cosyvoice2": 896, "indextts2": 1024}
@@ -93,9 +94,14 @@ def audit_release(repo: Path) -> dict[str, Any]:
     if not injection["matches_paper"]:
         defects.append("cosyvoice_injection_operator_deviation")
 
+    mixing = audit_released_cosyvoice_neutral_mixing(repo)
+    if mixing["verdict"] == "released_mixing_omits_neutral_mass_from_vector_composition":
+        defects.append("claim4_neutral_weight_omitted")
+
     return {
         "vectors": vectors,
         "indextts2_helpers": helper_reports,
         "cosyvoice_injection": injection,
+        "claim4_neutral_mixing": mixing,
         "defects": defects,
     }
