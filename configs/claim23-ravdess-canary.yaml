@@ -1,0 +1,19 @@
+run:
+  name: claim23-ravdess-unistream-canary
+  seed: 20260728
+  stage: claim2
+
+claims: [2, 3]
+
+claim23_canary:
+  base_config: claim23-ravdess-paired-sites.yaml
+  base_config_sha256: 34c65f9ffd87eddc471dafc0061472b17d96751cfbfa9252d54322b879ce5e4e
+  expected_clips: 12
+  expected_activation_records: 2880
+
+evidence:
+  claim_evidence: false
+  purpose: >-
+    Twelve fixed intensity-01 RAVDESS clips from actor 01 through every
+    CosyVoice operation and layer. This is a CUDA/API and terminal-token
+    structural canary only, not evidence for either public proxy.
