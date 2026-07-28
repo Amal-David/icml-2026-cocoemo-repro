@@ -9,4 +9,6 @@
 
 **Preregistered test.** Reconstruct deterministic valence-arousal severity bins and compare alpha 0, 3, and 6 with instruction, wrong-vector, negative-vector, shuffled-vector, and flow-only controls. Report paired emotion, identity, content, and prosody metrics with complete sample accounting and clustered bootstrap intervals. Perceived target emotion and naturalness require blinded human ratings.
 
+The reviewed but unpublished listening-study implementation is frozen at [GitHub commit 5a3af9a](https://github.com/Amal-David/icml-2026-cocoemo-repro/commit/5a3af9a). It validates media hashes and licenses, counterbalances conditions, stores no direct identifiers, and applies preregistered attention and playback-telemetry exclusions before crossed participant/content bootstrap analysis. It deliberately includes no audio, recruitment, ethics approval, participant data, or naturalness result.
+
 **Access boundary.** Exact Table 3 verification requires licensed [IEMOCAP](https://sail.usc.edu/iemocap/) and an unreleased mismatch manifest. A public CREMA-D or RAVDESS mismatch experiment is explicitly a mechanism proxy, never an exact reproduction.
