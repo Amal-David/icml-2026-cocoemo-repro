@@ -22,8 +22,8 @@ CoCoEmo. This yields 72 experimental stimuli.
 
 Recruit 36 adults and retain the first 10 valid responses in each of three
 preassigned groups, for 30 retained raters. Twelve one-time invitation codes are
-generated per group; a locked random priority resolves simultaneous valid
-submissions without post-hoc outcome selection.
+generated per group; an HMAC-ranked priority generated from a frozen private
+seed resolves simultaneous valid submissions without post-hoc outcome selection.
 
 Each rater receives 24 experimental trials and 6 quality trials. They hear each
 content family once and exactly 8 experimental trials from each condition. For

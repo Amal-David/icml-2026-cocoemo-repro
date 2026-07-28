@@ -1,0 +1,2181 @@
+{
+  "experimental_stimuli": [
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-01-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-01",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-01-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 0,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-01-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-01",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-01-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 0,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-01-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-01",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-01-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 0,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-02-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-02",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-02-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 1,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-02-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-02",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-02-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 1,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-02-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-02",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-02-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 1,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-03-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-03",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-03-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 2,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-03-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-03",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-03-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 2,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-03-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-03",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-03-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 2,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-04-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-04",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-04-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 3,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-04-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-04",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-04-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 3,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-04-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-04",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-04-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 3,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-05-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-05",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-05-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 4,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-05-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-05",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-05-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 4,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-05-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-05",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-05-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 4,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-06-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-06",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-06-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 5,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-06-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-06",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-06-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 5,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-06-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-06",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-06-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 5,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-07-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-07",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-07-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 6,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-07-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-07",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-07-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 6,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-07-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-07",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-07-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 6,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-08-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-08",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-08-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 7,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-08-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-08",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-08-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 7,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-08-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-08",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-08-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 7,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-09-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-09",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-09-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 8,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-09-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-09",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-09-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 8,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-09-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-09",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-09-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 8,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-10-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-10",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-10-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 9,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-10-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-10",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-10-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 9,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-10-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-10",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-10-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 9,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-11-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-11",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-11-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 10,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-11-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-11",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-11-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 10,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-11-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-11",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-11-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 10,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-12-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mixed-12",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-12-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 11,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-12-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mixed-12",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-12-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 11,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 5,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mixed-12-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mixed-12",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mixed-12-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 11,
+      "track": "mixed",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-01-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-01",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-01-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 12,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-01-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-01",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-01-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 12,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-01-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-01",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-01-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 12,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-02-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-02",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-02-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 13,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-02-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-02",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-02-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 13,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-02-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-02",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-02-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 13,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-03-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-03",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-03-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 14,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-03-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-03",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-03-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 14,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-03-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-03",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-03-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 14,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-04-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-04",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-04-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 15,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-04-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-04",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-04-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 15,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-04-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-04",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-04-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 15,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-05-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-05",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-05-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 16,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-05-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-05",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-05-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 16,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-05-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-05",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-05-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 16,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-06-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-06",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-06-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 17,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-06-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-06",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-06-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 17,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-06-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-06",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-06-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 17,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-07-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-07",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-07-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 18,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-07-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-07",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-07-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 18,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-07-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-07",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-07-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 18,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-08-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-08",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-08-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 19,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-08-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-08",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-08-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 19,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-08-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-08",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-08-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 19,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-09-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-09",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-09-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 20,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-09-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-09",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-09-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 20,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-09-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-09",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-09-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 20,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-10-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-10",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-10-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 21,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-10-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-10",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-10-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 21,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-10-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-10",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-10-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 21,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-11-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-11",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-11-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 22,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-11-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-11",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-11-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 22,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-11-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-11",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-11-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 22,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 0,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-12-alpha0.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "alpha0",
+      "duration_s": 1.0,
+      "item_id": "mismatch-12",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-12-alpha0",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 23,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-12-instruction.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "instruction",
+      "duration_s": 1.0,
+      "item_id": "mismatch-12",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-12-instruction",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 23,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    },
+    {
+      "alpha": 6,
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/mismatch-12-cocoemo.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "condition": "cocoemo",
+      "duration_s": 1.0,
+      "item_id": "mismatch-12",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "stimulus_id": "mismatch-12-cocoemo",
+      "target_allocation": {
+        "angry": 20,
+        "happy": 20,
+        "neutral": 20,
+        "sad": 20,
+        "surprised": 20
+      },
+      "template_index": 23,
+      "track": "mismatch",
+      "transcript": "REPLACE_WITH_LICENSE_CLEARED_ORIGINAL_TEXT"
+    }
+  ],
+  "generated_at": "2026-01-01T00:00:00Z",
+  "manifest_version": "REPLACE_WITH_FROZEN_TAG",
+  "protocol_version": "cocoemo-listening-v1",
+  "quality_trials": [
+    {
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/quality-01.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "duration_s": 1.0,
+      "expected_dominant_emotion": "angry",
+      "kind": "instruction",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "trial_id": "quality-01"
+    },
+    {
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/quality-02.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "duration_s": 1.0,
+      "expected_dominant_emotion": "happy",
+      "kind": "instruction",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "trial_id": "quality-02"
+    },
+    {
+      "kind": "duplicate",
+      "source_item_id": "mixed-01",
+      "trial_id": "quality-03"
+    },
+    {
+      "kind": "duplicate",
+      "source_item_id": "mismatch-01",
+      "trial_id": "quality-04"
+    },
+    {
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/quality-05.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "duration_s": 1.0,
+      "expected_dominant_emotion": "neutral",
+      "kind": "calibration",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "trial_id": "quality-05"
+    },
+    {
+      "audio_path": "REPLACE_WITH_PRIVATE_AUDIO/quality-06.wav",
+      "audio_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "duration_s": 1.0,
+      "expected_dominant_emotion": "angry",
+      "kind": "calibration",
+      "provenance": {
+        "backbone": "REPLACE_WITH_PINNED_BACKBONE",
+        "generator_commit": "REPLACE_WITH_40_CHAR_GIT_COMMIT",
+        "license_basis": "written consent for research redistribution",
+        "model_revision": "REPLACE_WITH_IMMUTABLE_REVISION",
+        "reference_voice_id": "REPLACE_WITH_NON_IDENTIFYING_CONSENTED_VOICE_ID",
+        "reference_voice_release_id": "REPLACE_WITH_PRIVATE_RELEASE_RECEIPT_ID",
+        "vector_id": "REPLACE_WITH_VECTOR_ID",
+        "vector_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "trial_id": "quality-06"
+    }
+  ],
+  "study_id": "REPLACE_WITH_STUDY_ID",
+  "template_notice": "Replace every REPLACE_WITH value and zero digest. This template contains no audio and must fail media verification."
+}

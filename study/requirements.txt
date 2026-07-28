@@ -1,0 +1,2 @@
+# Install only in the private listening-study Space. Core validation uses stdlib.
+gradio>=5.0,<6.0

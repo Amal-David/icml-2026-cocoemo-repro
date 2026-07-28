@@ -21,6 +21,12 @@
 | `created_at` | UTC generation timestamp |
 | `license_basis` | Redistribution basis for this stimulus |
 
+The 72 experimental rows are 24 content families times `alpha0`,
+`instruction`, and `cocoemo`. The six quality definitions are two `instruction`,
+two `duplicate`, and two `calibration` rows. A duplicate uses `source_item_id`
+and resolves to the participant's assigned condition, rather than hard-coding a
+condition that other groups did not hear.
+
 ## Private response object
 
 | Field | Meaning |
@@ -36,6 +42,8 @@
 | `dominant_emotion` | One of five locked labels |
 | `emotion_allocation` | Five integer allocations summing to 100 |
 | `attention_results` | Quality-item responses and pass/fail rules |
+| `exclusion_reasons` | All preregistered exclusion rules that applied; never silently removed |
+| `group` / `priority` | Fixed counterbalance assignment and tie-break order, not identity data |
 
 Plain invitation codes, identities, IP addresses, raw user agents, microphone
 data, and free text are prohibited fields.

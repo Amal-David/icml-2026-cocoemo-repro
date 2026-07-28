@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Amal-David/icml-2026-cocoemo-repro/study/manifest.schema.json",
+  "title": "CoCoEmo blinded listening-study frozen manifest",
+  "type": "object",
+  "required": ["protocol_version", "manifest_version", "study_id", "generated_at", "experimental_stimuli", "quality_trials"],
+  "properties": {
+    "protocol_version": {"const": "cocoemo-listening-v1"},
+    "manifest_version": {"type": "string", "minLength": 1},
+    "study_id": {"type": "string", "minLength": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "experimental_stimuli": {"type": "array", "minItems": 72, "maxItems": 72, "items": {"$ref": "#/$defs/experimental"}},
+    "quality_trials": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/quality"}}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "allocation": {
+      "type": "object",
+      "required": ["angry", "happy", "sad", "surprised", "neutral"],
+      "additionalProperties": false,
+      "properties": {
+        "angry": {"type": "integer", "minimum": 0, "maximum": 100},
+        "happy": {"type": "integer", "minimum": 0, "maximum": 100},
+        "sad": {"type": "integer", "minimum": 0, "maximum": 100},
+        "surprised": {"type": "integer", "minimum": 0, "maximum": 100},
+        "neutral": {"type": "integer", "minimum": 0, "maximum": 100}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["backbone", "model_revision", "vector_id", "vector_sha256", "reference_voice_id", "reference_voice_release_id", "generator_commit", "license_basis"],
+      "properties": {
+        "backbone": {"type": "string", "minLength": 1},
+        "model_revision": {"type": "string", "minLength": 1},
+        "vector_id": {"type": "string", "minLength": 1},
+        "vector_sha256": {"$ref": "#/$defs/sha256"},
+        "reference_voice_id": {"type": "string", "minLength": 1},
+        "reference_voice_release_id": {"type": "string", "minLength": 1},
+        "generator_commit": {"type": "string", "minLength": 1},
+        "license_basis": {"type": "string", "minLength": 1}
+      }
+    },
+    "media": {
+      "type": "object",
+      "required": ["audio_path", "audio_sha256", "duration_s", "provenance"],
+      "properties": {
+        "audio_path": {"type": "string", "minLength": 1},
+        "audio_sha256": {"$ref": "#/$defs/sha256"},
+        "duration_s": {"type": "number", "exclusiveMinimum": 0},
+        "provenance": {"$ref": "#/$defs/provenance"}
+      }
+    },
+    "experimental": {
+      "allOf": [
+        {"$ref": "#/$defs/media"},
+        {"type": "object", "required": ["stimulus_id", "item_id", "track", "condition", "transcript", "target_allocation", "alpha"], "properties": {
+          "stimulus_id": {"type": "string", "minLength": 1},
+          "item_id": {"type": "string", "minLength": 1},
+          "track": {"enum": ["mixed", "mismatch"]},
+          "condition": {"enum": ["alpha0", "instruction", "cocoemo"]},
+          "transcript": {"type": "string", "minLength": 1},
+          "target_allocation": {"$ref": "#/$defs/allocation"},
+          "alpha": {"type": "number", "minimum": 0}
+        }}
+      ]
+    },
+    "quality": {
+      "allOf": [
+        {"type": "object", "required": ["trial_id", "kind"], "properties": {
+          "trial_id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["instruction", "duplicate", "calibration"]},
+          "expected_dominant_emotion": {"enum": ["angry", "happy", "sad", "surprised", "neutral"]},
+          "source_item_id": {"type": "string", "minLength": 1},
+          "audio_path": {"type": "string", "minLength": 1},
+          "audio_sha256": {"$ref": "#/$defs/sha256"},
+          "duration_s": {"type": "number", "exclusiveMinimum": 0},
+          "provenance": {"$ref": "#/$defs/provenance"}
+        }}
+      ]
+    }
+  }
+}
