@@ -1,0 +1,18 @@
+run:
+  name: claim4-cremad-mixed-runtime-canary
+  seed: 20260728
+  stage: claim4
+
+claims: [4]
+
+claim4_canary:
+  base_config: claim4-cremad-mixed-directional.yaml
+  base_config_sha256: 21aa6c61bbabd0e732f801966abc55b85e1575b0ec002bc8f75f92a419ea3db6
+  expected_samples: 1
+  expected_rendered_wavs: 7
+
+evidence:
+  claim_evidence: false
+  purpose: >-
+    One selected CREMA-D actor through all seven frozen arms. This is a strict
+    GPU release/API canary, not evidence for the 60-actor Claim 4 proxy.

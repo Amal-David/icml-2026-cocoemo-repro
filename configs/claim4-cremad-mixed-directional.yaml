@@ -1,0 +1,94 @@
+run:
+  name: claim4-cremad-mixed-directional-public-proxy
+  seed: 20260728
+  stage: claim4
+
+claims: [4]
+
+claim4:
+  protocol: cremad_mixed_directional_public_proxy_v1
+  mode: full
+  source:
+    revision: 1658cd342dff90010aa843eaeebd53610a08b1dc
+    votes_url: https://raw.githubusercontent.com/CheyneyComputerScience/CREMA-D/1658cd342dff90010aa843eaeebd53610a08b1dc/processedResults/tabulatedVotes.csv
+    votes_sha256: 774d9d759cb5caf2542758a39eca8c0f1d2777f9987ff5d5adf8066d192f377b
+    content_metadata_url_template: https://api.github.com/repos/CheyneyComputerScience/CREMA-D/contents/AudioWAV/{filename}.wav?ref={revision}
+    git_blob_url_template: https://api.github.com/repos/CheyneyComputerScience/CREMA-D/git/blobs/{git_blob_sha}
+    expected_audio_only_rows: 7442
+    expected_eligible_rows: 118
+    expected_eligible_actors: 60
+  selection:
+    actor_count: 60
+    one_item_per_actor: true
+    eligible_rule: >-
+      supported_disagreement_and_positive_neutral_and_two_active_non_neutral_and_unique_non_neutral_maximum
+    neutral_reference_rule: provided_neutral_label_and_unique_neutral_majority_vote
+  arms:
+    - released_four_way
+    - dominant_non_neutral
+    - shuffled_distribution
+    - random_norm_matched
+    - renormalized_non_neutral_diagnostic
+    - neutral_zero_vector_diagnostic
+    - identity_neutral_control
+  expected_samples: 60
+  expected_rendered_wavs: 420
+  alpha: 5.0
+  vector_contract:
+    backbone: cosyvoice2
+    operation: attn_output
+    layer: 17
+    shape: [1, 896]
+    paths:
+      angry: steering_vectors/cosyvoice2/angry_neutral_attn_output.pt
+      happy: steering_vectors/cosyvoice2/happy_neutral_attn_output.pt
+      sad: steering_vectors/cosyvoice2/sad_neutral_attn_output.pt
+      surprise: steering_vectors/cosyvoice2/surprise_neutral_attn_output.pt
+    sha256:
+      angry: 16f6b6a20b7edad9285c7bf39ab69fedad1952218a796a027668e8d8962fe18b
+      happy: 24218782213c46197af3c6cf14f941d2f84585e98ace1fa77fc05a96005eb68b
+      sad: 215ce83da8ccbeb18d065d6bf995a5a2b5f253fdaac879c886d913a9009c0831
+      surprise: 8a8535ea3b8f60d4f7eab31eb842aeab83656c618d613fd704832324e690544a
+  model:
+    id: FunAudioLLM/CosyVoice2-0.5B
+    revision: eec1ae6c79877dbd9379285cf8789c9e0879293d
+    source_url: https://github.com/FunAudioLLM/CosyVoice.git
+    source_revision: 074ca6dc9e80a2f424f1f74b48bdd7d3fea531cc
+    required_api: cocoemo.backbones.cosyvoice2.generate_steered_speech
+  audio_quality:
+    max_clipping_fraction: 0.001
+    sample_rate_hz: 22050
+  evaluators:
+    emotion2vec:
+      id: emotion2vec/emotion2vec_plus_large
+      revision: 6c303ba987b86b93193de93e34bb2b077a6bedc4
+      canonical_labels: [angry, happy, neutral, sad, surprise]
+      raw_label_map:
+        生气/angry: angry
+        开心/happy: happy
+        中立/neutral: neutral
+        难过/sad: sad
+        吃惊/surprised: surprise
+    wavlm:
+      id: microsoft/wavlm-base-sv
+      revision: 0a23162ffc49adcf42bdf836a00cb2eb45af3601
+      metric: speaker_similarity_against_source_reference
+    whisper:
+      id: openai/whisper-large-v3
+      revision: 06f233fe06e710322aca913c1bc4249a0d71fce1
+      language: en
+      metric: word_error_rate_against_frozen_cremad_transcript
+  decisions:
+    bootstrap_replicates: 10000
+    bootstrap_seed: 20260728
+    min_rho_advantage: 0.0
+    min_h_rate_advantage: 0.0
+    min_rho_vs_dominant: -0.02
+    max_wer_increase: 0.02
+    min_speaker_similarity_change: -0.02
+
+evidence:
+  claim_evidence: true
+  purpose: >-
+    A public CREMA-D directional proxy for Claim 4. It is not a reproduction of
+    the unreleased 772-item manifest, IEMOCAP result, or human naturalness ratings.
