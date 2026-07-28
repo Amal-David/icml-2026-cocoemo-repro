@@ -10,7 +10,7 @@
     "icml2026-repro",
     "paper-wW2LIHSCfw"
   ],
-  "updated_at": "2026-07-28T03:23:52+00:00",
+  "updated_at": "2026-07-28T04:10:43+00:00",
   "root": {
     "slug": "index",
     "title": "Reproduction: CoCoEmo: Composable and Controllable Human-Like Emotional TTS via Activation Steering",
@@ -67,9 +67,9 @@
       "provider": "Codex",
       "model": "gpt-5.6-sol",
       "started_at": "2026-07-27T18:50:58.834000+00:00",
-      "ended_at": "2026-07-28T03:23:44.847000+00:00",
-      "duration_ms": 30766013,
-      "event_count": 883,
+      "ended_at": "2026-07-28T04:10:34.499000+00:00",
+      "duration_ms": 33575665,
+      "event_count": 1209,
       "turn_count": 7,
       "source_available": true,
       "attached_at": "2026-07-27T19:22:47+00:00",
@@ -82,8 +82,8 @@
     "total_size": 0,
     "bucket_id": null
   },
-  "agent_view_tokens": 4083,
-  "trace_view_tokens": 54963,
+  "agent_view_tokens": 4165,
+  "trace_view_tokens": 70633,
   "workspace_view_tokens": 8,
-  "revision": "dedf8fc42e53360d529d"
+  "revision": "b0b039e1b310df77119b"
 }
