@@ -66,6 +66,36 @@ def canonical_emotion_probabilities(
     return {label: mapped[label] for label in canonical_labels}
 
 
+def canonical_emotion_embedding(result: Any) -> np.ndarray:
+    """Extract exactly one finite utterance embedding from Emotion2Vec output.
+
+    FunASR releases have used both ``feats`` and ``embedding`` spellings.  We
+    permit only one unambiguous field and never synthesize a fallback vector;
+    this makes downstream cosine metrics fail closed when the pinned runtime
+    changes its response schema.
+    """
+
+    if not isinstance(result, (list, tuple)) or len(result) != 1 or not isinstance(result[0], Mapping):
+        raise ContractError("Emotion2Vec embedding request must return exactly one utterance result")
+    payload = result[0]
+    fields = [key for key in ("embedding", "embeddings", "feats") if key in payload]
+    if len(fields) != 1:
+        raise ContractError("Emotion2Vec embedding result must contain exactly one supported embedding field")
+    value = payload[fields[0]]
+    try:
+        array = np.asarray(value, dtype=np.float32)
+    except (TypeError, ValueError) as exc:
+        raise ContractError("Emotion2Vec embedding cannot be converted to a numeric array") from exc
+    if array.ndim == 2 and array.shape[0] == 1:
+        array = array[0]
+    if array.ndim != 1 or array.size < 2 or not np.all(np.isfinite(array)):
+        raise ContractError("Emotion2Vec embedding must be one-dimensional, nontrivial, and finite")
+    norm = float(np.linalg.norm(array))
+    if norm == 0.0:
+        raise ContractError("Emotion2Vec embedding must have nonzero L2 norm")
+    return array
+
+
 def claim4_proportion_metrics(
     *, target_distribution: Mapping[str, float], arm_probabilities: Mapping[str, float],
     identity_probabilities: Mapping[str, float],
@@ -175,6 +205,13 @@ class FrozenClaim4Evaluators:
             ),
             raw_label_map=self.raw_label_map,
             canonical_labels=self.canonical_labels,
+        )
+
+    def emotion_embedding(self, wav_path: Path) -> np.ndarray:
+        return canonical_emotion_embedding(
+            self.emotion_model.generate(
+                str(wav_path), output_dir=None, granularity="utterance", extract_embedding=True,
+            )
         )
 
     def speaker_similarity(self, wav_path: Path, reference_wav: Path) -> float:

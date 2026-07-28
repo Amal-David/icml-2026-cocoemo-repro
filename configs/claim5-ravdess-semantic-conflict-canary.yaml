@@ -1,0 +1,19 @@
+run:
+  name: claim5-ravdess-text-target-semantic-conflict-canary
+  seed: 20260728
+  stage: claim5
+
+claims: [5]
+
+claim5_canary:
+  base_config: claim5-ravdess-semantic-conflict.yaml
+  base_config_sha256: 90893b319ddbe1a604dd1b01800381fe9cbd6b29384dcdbda5986c1e85a0011c
+  actor_id: "01"
+  expected_cells: 4
+  expected_rendered_wavs: 32
+
+evidence:
+  claim_evidence: false
+  purpose: >-
+    One configured RAVDESS actor times four targets times eight arms runtime
+    canary. It creates no Claim 5 evidence or verdict.

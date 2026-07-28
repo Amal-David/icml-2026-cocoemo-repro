@@ -1,0 +1,103 @@
+run:
+  name: claim5-ravdess-text-target-semantic-conflict
+  seed: 20260728
+  stage: claim5
+
+claims: [5]
+
+claim5:
+  protocol: ravdess_text_target_categorical_semantic_conflict_proxy_v1
+  mode: full
+  catalog:
+    path: assets/claim5_text_catalog_v1.json
+    sha256: dc56fe81cef132c2422598f251738f4c076719c986fe81385ebc2d76ac42adf7
+    schema_version: 1
+    author_owned: true
+  ravdess:
+    source_url: https://zenodo.org/records/1188976
+    release: RAVDESS-v1.0-audio-speech
+    license: CC BY-NC-SA 4.0
+    license_acknowledged: true
+    acquire: true
+    archive_url: https://zenodo.org/api/records/1188976/files/Audio_Speech_Actors_01-24.zip/content
+    archive_filename: Audio_Speech_Actors_01-24.zip
+    archive_size_bytes: 208468073
+    archive_md5: bc696df654c87fed845eb13823edef8a
+    expected_archive_wavs: 1440
+    root: .cache/ravdess/Audio_Speech_Actors_01-24
+    expected_total_groups: 96
+  targets: [angry, happy, sad, surprise]
+  statements: ["01", "02"]
+  repetitions: ["01", "02"]
+  selection:
+    actor_count: 24
+    cell_assignment: group_index_equals_actor_index_plus_target_index_modulo_four
+    neutral_reference: same_actor_statement_repetition_neutral_intensity_01
+    emotional_reference: same_actor_statement_repetition_target_intensity_01
+    content_family_count: 16
+    actors_per_content_family: 6
+  arms:
+    - no_steer
+    - instruction_target
+    - cocoemo_alpha3
+    - cocoemo_alpha6
+    - wrong_target_alpha6
+    - negative_target_alpha6
+    - random_norm_matched_alpha6
+    - flow_side_emotional_reference
+  expected_cells: 96
+  expected_rendered_wavs: 768
+  model:
+    id: FunAudioLLM/CosyVoice2-0.5B
+    revision: eec1ae6c79877dbd9379285cf8789c9e0879293d
+    source_url: https://github.com/FunAudioLLM/CosyVoice.git
+    source_revision: 074ca6dc9e80a2f424f1f74b48bdd7d3fea531cc
+  vector_contract:
+    backbone: cosyvoice2
+    operation: attn_output
+    layers: [17, 14]
+    shape: [1, 896]
+    paths:
+      angry: steering_vectors/cosyvoice2/angry_neutral_attn_output.pt
+      happy: steering_vectors/cosyvoice2/happy_neutral_attn_output.pt
+      sad: steering_vectors/cosyvoice2/sad_neutral_attn_output.pt
+      surprise: steering_vectors/cosyvoice2/surprise_neutral_attn_output.pt
+    sha256:
+      angry: 16f6b6a20b7edad9285c7bf39ab69fedad1952218a796a027668e8d8962fe18b
+      happy: 24218782213c46197af3c6cf14f941d2f84585e98ace1fa77fc05a96005eb68b
+      sad: 215ce83da8ccbeb18d065d6bf995a5a2b5f253fdaac879c886d913a9009c0831
+      surprise: 8a8535ea3b8f60d4f7eab31eb842aeab83656c618d613fd704832324e690544a
+  evaluators:
+    emotion2vec:
+      id: emotion2vec/emotion2vec_plus_large
+      revision: 6c303ba987b86b93193de93e34bb2b077a6bedc4
+      canonical_labels: [angry, happy, neutral, sad, surprise]
+      raw_label_map:
+        生气/angry: angry
+        开心/happy: happy
+        中立/neutral: neutral
+        难过/sad: sad
+        吃惊/surprised: surprise
+    wavlm:
+      id: microsoft/wavlm-base-sv
+      revision: 0a23162ffc49adcf42bdf836a00cb2eb45af3601
+    whisper:
+      id: openai/whisper-large-v3
+      revision: 06f233fe06e710322aca913c1bc4249a0d71fce1
+      language: en
+  audio_quality:
+    sample_rate_hz: 24000
+    max_clipping_fraction: 0.001
+  decisions:
+    bootstrap_method: actor_cluster_observed_cell_mean_v1
+    bootstrap_replicates: 10000
+    bootstrap_seed: 20260728
+    min_primary_effect: 0.0
+    min_wavlm_change: -0.02
+    max_wer_increase: 0.02
+
+evidence:
+  claim_evidence: true
+  purpose: >-
+    Public RAVDESS text-target categorical semantic-conflict proxy. It is not
+    an exact Table 3 reproduction.

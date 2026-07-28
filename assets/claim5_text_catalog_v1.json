@@ -1,0 +1,22 @@
+{
+  "author_owned": true,
+  "schema_version": 1,
+  "texts": [
+    {"target": "angry", "text_id": "angry_01", "text": "The warm tea and quiet garden made the afternoon feel peaceful."},
+    {"target": "angry", "text_id": "angry_02", "text": "I walked home slowly, enjoying the soft rain and empty street."},
+    {"target": "angry", "text_id": "angry_03", "text": "The library was still, and I had time to read by the window."},
+    {"target": "angry", "text_id": "angry_04", "text": "We sat calmly on the porch while the evening cooled down."},
+    {"target": "happy", "text_id": "happy_01", "text": "The final train left before I reached the platform."},
+    {"target": "happy", "text_id": "happy_02", "text": "The lights went out just as I finished the work."},
+    {"target": "happy", "text_id": "happy_03", "text": "I returned to find the room empty and the door locked."},
+    {"target": "happy", "text_id": "happy_04", "text": "The note said our plans had been cancelled without warning."},
+    {"target": "sad", "text_id": "sad_01", "text": "The whole team cheered when our project won the prize."},
+    {"target": "sad", "text_id": "sad_02", "text": "Fireworks burst above the crowd as the music began."},
+    {"target": "sad", "text_id": "sad_03", "text": "My friends arrived laughing with a cake and bright balloons."},
+    {"target": "sad", "text_id": "sad_04", "text": "We ran outside, clapping as the parade turned the corner."},
+    {"target": "surprise", "text_id": "surprise_01", "text": "The clock ticked steadily in the silent office."},
+    {"target": "surprise", "text_id": "surprise_02", "text": "A quiet breeze moved the curtains in the empty room."},
+    {"target": "surprise", "text_id": "surprise_03", "text": "I sorted the papers slowly beside a dim desk lamp."},
+    {"target": "surprise", "text_id": "surprise_04", "text": "The road was empty, and the afternoon passed without change."}
+  ]
+}

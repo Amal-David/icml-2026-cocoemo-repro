@@ -5,6 +5,7 @@ import pytest
 from repro.claim4_evaluators import (
     FrozenClaim4Evaluators,
     _load_pinned_emotion_model,
+    canonical_emotion_embedding,
     canonical_emotion_probabilities,
     claim4_proportion_metrics,
     word_error_rate,
@@ -43,6 +44,15 @@ def test_frozen_evaluator_emotion_adapter_uses_the_exact_fake_model_output(tmp_p
         canonical_labels=LABELS, language="en",
     )
     assert evaluators.emotion_probabilities(tmp_path / "sample.wav")["angry"] == 0.4
+
+
+def test_emotion_embedding_adapter_rejects_ambiguous_or_nonfinite_payloads() -> None:
+    embedding = canonical_emotion_embedding([{"embedding": [[1.0, 2.0, 3.0]]}])
+    assert embedding.tolist() == [1.0, 2.0, 3.0]
+    with pytest.raises(ContractError, match="exactly one"):
+        canonical_emotion_embedding([{"embedding": [1.0, 2.0], "feats": [1.0, 2.0]}])
+    with pytest.raises(ContractError, match="finite"):
+        canonical_emotion_embedding([{"embedding": [1.0, float("nan")]}])
 
 
 def test_funasr_receives_a_local_snapshot_of_the_exact_pinned_revision(tmp_path) -> None:
